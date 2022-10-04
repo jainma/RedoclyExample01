@@ -57,54 +57,27 @@ tags:
   - name: Tag
     description: This is a tag description.
 servers:
-  - url: https://{tenant}/api/v1
-    variables:
-      tenant:
-        default: www
-        description: Your tenant id
-  - url: https://example.com/api/v1
+- url: https://127.0.0.1:8080
+  description: Generated server url
 paths:
-  /users/{username}:
-    parameters:
-      - name: pretty_print
-        in: query
-        description: Pretty print response
-        schema:
-          type: boolean
+  "/api/v1/candidates":
     get:
       tags:
-        - User
-      summary: Get user by user name
-      description: |
-        Some description of the operation.
-        You can use `Markdown` here.
-      operationId: getUserByName
+      - api-rest-controller
+      operationId: fetchCandidates
       parameters:
-        - name: username
-          in: path
-          description: The name that needs to be fetched
-          required: true
-          schema:
-            type: string
-        - name: with_email
-          in: query
-          description: Filter users without email
-          schema:
-            type: boolean
-      security:
-        - main_auth:
-            - read:users
-        - api_key: []
+      - name: skill
+        in: query
+        required: false
+        schema:
+          type: string
       responses:
         '200':
-          description: Success
+          description: OK
           content:
-            application/json:
+            "*/*":
               schema:
-                $ref: '#/components/schemas/User'
-              example:
-                username: user1
-                email: user@example.com
+                type: object
         '403':
           description: Forbidden
           $ref: '#/components/responses/Problem'
