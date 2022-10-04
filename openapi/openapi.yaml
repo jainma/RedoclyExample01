@@ -11,6 +11,7 @@ paths:
       tags:
       - api-rest-controller
       operationId: fetchCandidates
+      summary: sdfds
       parameters:
       - name: skill
         in: query
