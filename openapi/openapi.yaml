@@ -49,13 +49,6 @@ info:
 
     interfaces have done for lower-level programming, OpenAPI removes the
     guesswork in calling the service.
-tags:
-  - name: Echo
-    description: Example echo operations.
-  - name: User
-    description: Operations about users.
-  - name: Tag
-    description: This is a tag description.
 servers:
 - url: https://127.0.0.1:8080
   description: Generated server url
@@ -63,7 +56,7 @@ paths:
   "/api/v1/candidates":
     get:
       tags:
-      - api-rest-controller
+      summary: Updated userapi-rest-controller
       operationId: fetchCandidates
       parameters:
       - name: skill
