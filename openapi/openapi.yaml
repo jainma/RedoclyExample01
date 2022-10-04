@@ -55,7 +55,6 @@ servers:
 paths:
   "/api/v1/candidates":
     get:
-      tags:
       summary: Updated userapi-rest-controller
       operationId: fetchCandidates
       parameters:
