@@ -3,7 +3,7 @@ info:
   title: OpenAPI definition
   version: v0
 servers:
-- url: https://127.0.0.1:8080
+- url: https://localhost:8080
   description: Generated server url
 paths:
   "/api/v1/candidates":
@@ -17,11 +17,10 @@ paths:
         required: false
         schema:
           type: string
-      responses:
-        '200':
-          description: OK
-          content:
-            "*/*":
-              schema:
-                type: object    
+     responses:
+  '200':
+    description: OK
+  
+security: 
+  - OAuth: []                
 components: {}
