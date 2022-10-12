@@ -2,13 +2,14 @@ openapi: 3.0.1
 info:
   title: OpenAPI definition
   version: v0
-  summary: ""
 servers:
 - url: http://localhost:8080
   description: Generated server url
 paths:
   "/api/v1/candidates":
     get:
+	  summary: Update an existing pet
+      description: ''
       tags:
       - api-rest-controller
       operationId: fetchCandidates
@@ -25,10 +26,4 @@ paths:
             "*/*":
               schema:
                 type: object
-components:
-  securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: jwt
-      description: 'note: non-oauth scopes are not defined at the securityScheme level'
+components: {}
