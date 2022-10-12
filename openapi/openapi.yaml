@@ -5,6 +5,11 @@ info:
 servers:
 - url: http://localhost:8080
   description: Generated server url
+security:
+  - {}
+  - petstore_auth:
+    - write:pets
+    - read:pets
 paths:
   "/api/v1/candidates":
     get:
