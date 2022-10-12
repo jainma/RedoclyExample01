@@ -5,7 +5,7 @@ info:
 servers:
 - url: http://localhost:8080
   description: Generated server url
-security:
+security: []
   - {}
   - petstore_auth:
     - write:pets
