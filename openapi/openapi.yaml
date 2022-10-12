@@ -146,11 +146,9 @@ paths:
       summary: "Update an existing pet"
       tags: 
         - inventory-controller
-  ? "/cars/delete/{id}"
-  : 
+  "/cars/delete/{id}"
     delete: ~
     description: ""
-    operationId: deleteCarDetails
     parameters: 
       - 
         in: path
@@ -160,7 +158,7 @@ paths:
           format: int64
           type: integer
     responses: 
-      ? "200"
+      "200"
       : 
         content: 
           ? "*/*"
@@ -238,8 +236,6 @@ paths:
               type: string
         description: OK
     summary: "Update an existing pet"
-    tags: 
-      - inventory-controller
   /cars/getStocks: 
     get: 
       description: ""
