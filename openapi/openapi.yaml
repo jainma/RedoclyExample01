@@ -10,7 +10,7 @@ servers:
 paths:
   "/cars/update/{id}":
     put:
-	  summary: Update an existing pet
+      summary: Update an existing pet
       description: ''
       tags:
       - inventory-controller
@@ -106,7 +106,7 @@ paths:
                 - 511 NETWORK_AUTHENTICATION_REQUIRED
   "/cars/addCar":
     post:
-	summary: Update an existing pet
+    summary: Update an existing pet
     description: ''
       tags:
       - inventory-controller
@@ -195,7 +195,7 @@ paths:
                 - 511 NETWORK_AUTHENTICATION_REQUIRED
   "/cars/getStocks":
     get:
-	summary: Update an existing pet
+    summary: Update an existing pet
     description: ''
       tags:
       - inventory-controller
@@ -211,7 +211,7 @@ paths:
                   "$ref": "#/components/schemas/Car"
   "/cars/delete/{id}":
     delete:
-	summary: Update an existing pet
+    summary: Update an existing pet
     description: ''
       tags:
       - inventory-controller
