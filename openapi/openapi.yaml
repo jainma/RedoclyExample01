@@ -109,3 +109,8 @@ components:
           format: int32
         message:
           type: string
+		  
+		  
+		  petstore_auth:
+- write:pets
+- read:pets
