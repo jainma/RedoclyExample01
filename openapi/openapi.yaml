@@ -6,7 +6,7 @@ info:
 servers:
 - url: http://localhost:8081
   description: Generated server url
-  security: []
+security: []
 paths:
   "/cars/update/{id}":
     put:
