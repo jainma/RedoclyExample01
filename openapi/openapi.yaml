@@ -8,7 +8,7 @@ servers:
 paths:
   "/api/v1/candidates":
     get:
-	  summary: Update an existing pet
+      summary: Update an existing pet
       description: ''
       tags:
       - api-rest-controller
