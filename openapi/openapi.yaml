@@ -3,11 +3,11 @@ info:
   title: OpenAPI definition
   version: v0
 servers:
-  - url: https://catfact.ninja/fact
+  - url: https://catfact.ninja
     description: Generated server url
 security: []
 paths:
-  /api/v1/candidates:
+  /fact:
     get:
       summary: Update an existing pet
       description: ''
