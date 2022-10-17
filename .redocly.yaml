@@ -2,14 +2,15 @@
 apis:
   sample@v1: 
     root: openapi/openapi.yaml
+  sample@v2: 
+    root: openapi/openapi1.yaml
 lint:
   extends:
     - recommended
   rules:
     no-unused-components: error
 features.openapi:
-  showConsole: true
-  htmlTemplate: ./docs/index.html
+  requiredPropsFirst: "true"
   theme:
     colors:
       primary:

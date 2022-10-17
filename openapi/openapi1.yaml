@@ -2,8 +2,7 @@
 openapi: 3.0.1
 info:
   title: OpenAPI definition
-  version: v0
-  description: Generated server url
+  version: v1
 servers:
 - url: http://arpit-dev.int.kronos.com:8081
   description: Generated server url
