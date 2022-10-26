@@ -20,3 +20,11 @@ paths:
           required: false
           schema:
             type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+components: {}
