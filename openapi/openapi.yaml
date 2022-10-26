@@ -27,8 +27,3 @@ paths:
             '*/*':
               schema:
                 type: object
-components: {}
-
-
-
-
