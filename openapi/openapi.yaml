@@ -1,353 +1,3744 @@
----
-openapi: 3.0.1
-info:
-  title: OpenAPI definition
-  version: v0
-  description: Generated server url
-servers:
-- url: http://arpit-dev.int.kronos.com:8081
-  description: Generated server url
-security: []
-paths:
-  "/cars/update/{id}":
-    put:
-      summary: Update an existing pet
-      description: ''
-      tags:
-      - inventory-controller
-      operationId: updateCarDetails
-      parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: integer
-          format: int64
-      requestBody:
-        content:
-          application/json:
-            schema:
-              "$ref": "#/components/schemas/CarDto"
-        required: true
-      responses:
-        '200':
-          description: OK
-          content:
-            "*/*":
-              schema:
-                type: string
-                enum:
-                - 100 CONTINUE
-                - 101 SWITCHING_PROTOCOLS
-                - 102 PROCESSING
-                - 103 CHECKPOINT
-                - 200 OK
-                - 201 CREATED
-                - 202 ACCEPTED
-                - 203 NON_AUTHORITATIVE_INFORMATION
-                - 204 NO_CONTENT
-                - 205 RESET_CONTENT
-                - 206 PARTIAL_CONTENT
-                - 207 MULTI_STATUS
-                - 208 ALREADY_REPORTED
-                - 226 IM_USED
-                - 300 MULTIPLE_CHOICES
-                - 301 MOVED_PERMANENTLY
-                - 302 FOUND
-                - 302 MOVED_TEMPORARILY
-                - 303 SEE_OTHER
-                - 304 NOT_MODIFIED
-                - 305 USE_PROXY
-                - 307 TEMPORARY_REDIRECT
-                - 308 PERMANENT_REDIRECT
-                - 400 BAD_REQUEST
-                - 401 UNAUTHORIZED
-                - 402 PAYMENT_REQUIRED
-                - 403 FORBIDDEN
-                - 404 NOT_FOUND
-                - 405 METHOD_NOT_ALLOWED
-                - 406 NOT_ACCEPTABLE
-                - 407 PROXY_AUTHENTICATION_REQUIRED
-                - 408 REQUEST_TIMEOUT
-                - 409 CONFLICT
-                - 410 GONE
-                - 411 LENGTH_REQUIRED
-                - 412 PRECONDITION_FAILED
-                - 413 PAYLOAD_TOO_LARGE
-                - 413 REQUEST_ENTITY_TOO_LARGE
-                - 414 URI_TOO_LONG
-                - 414 REQUEST_URI_TOO_LONG
-                - 415 UNSUPPORTED_MEDIA_TYPE
-                - 416 REQUESTED_RANGE_NOT_SATISFIABLE
-                - 417 EXPECTATION_FAILED
-                - 418 I_AM_A_TEAPOT
-                - 419 INSUFFICIENT_SPACE_ON_RESOURCE
-                - 420 METHOD_FAILURE
-                - 421 DESTINATION_LOCKED
-                - 422 UNPROCESSABLE_ENTITY
-                - 423 LOCKED
-                - 424 FAILED_DEPENDENCY
-                - 425 TOO_EARLY
-                - 426 UPGRADE_REQUIRED
-                - 428 PRECONDITION_REQUIRED
-                - 429 TOO_MANY_REQUESTS
-                - 431 REQUEST_HEADER_FIELDS_TOO_LARGE
-                - 451 UNAVAILABLE_FOR_LEGAL_REASONS
-                - 500 INTERNAL_SERVER_ERROR
-                - 501 NOT_IMPLEMENTED
-                - 502 BAD_GATEWAY
-                - 503 SERVICE_UNAVAILABLE
-                - 504 GATEWAY_TIMEOUT
-                - 505 HTTP_VERSION_NOT_SUPPORTED
-                - 506 VARIANT_ALSO_NEGOTIATES
-                - 507 INSUFFICIENT_STORAGE
-                - 508 LOOP_DETECTED
-                - 509 BANDWIDTH_LIMIT_EXCEEDED
-                - 510 NOT_EXTENDED
-                - 511 NETWORK_AUTHENTICATION_REQUIRED
-  "/cars/addCar":
-    post:
-      summary: Update an existing pet
-      description: ''
-      tags:
-      - inventory-controller
-      operationId: addCarDetails
-      requestBody:
-        content:
-          application/json:
-            schema:
-              "$ref": "#/components/schemas/CarDto"
-        required: true
-      responses:
-        '200':
-          description: OK
-          content:
-            "*/*":
-              schema:
-                type: string
-                enum:
-                - 100 CONTINUE
-                - 101 SWITCHING_PROTOCOLS
-                - 102 PROCESSING
-                - 103 CHECKPOINT
-                - 200 OK
-                - 201 CREATED
-                - 202 ACCEPTED
-                - 203 NON_AUTHORITATIVE_INFORMATION
-                - 204 NO_CONTENT
-                - 205 RESET_CONTENT
-                - 206 PARTIAL_CONTENT
-                - 207 MULTI_STATUS
-                - 208 ALREADY_REPORTED
-                - 226 IM_USED
-                - 300 MULTIPLE_CHOICES
-                - 301 MOVED_PERMANENTLY
-                - 302 FOUND
-                - 302 MOVED_TEMPORARILY
-                - 303 SEE_OTHER
-                - 304 NOT_MODIFIED
-                - 305 USE_PROXY
-                - 307 TEMPORARY_REDIRECT
-                - 308 PERMANENT_REDIRECT
-                - 400 BAD_REQUEST
-                - 401 UNAUTHORIZED
-                - 402 PAYMENT_REQUIRED
-                - 403 FORBIDDEN
-                - 404 NOT_FOUND
-                - 405 METHOD_NOT_ALLOWED
-                - 406 NOT_ACCEPTABLE
-                - 407 PROXY_AUTHENTICATION_REQUIRED
-                - 408 REQUEST_TIMEOUT
-                - 409 CONFLICT
-                - 410 GONE
-                - 411 LENGTH_REQUIRED
-                - 412 PRECONDITION_FAILED
-                - 413 PAYLOAD_TOO_LARGE
-                - 413 REQUEST_ENTITY_TOO_LARGE
-                - 414 URI_TOO_LONG
-                - 414 REQUEST_URI_TOO_LONG
-                - 415 UNSUPPORTED_MEDIA_TYPE
-                - 416 REQUESTED_RANGE_NOT_SATISFIABLE
-                - 417 EXPECTATION_FAILED
-                - 418 I_AM_A_TEAPOT
-                - 419 INSUFFICIENT_SPACE_ON_RESOURCE
-                - 420 METHOD_FAILURE
-                - 421 DESTINATION_LOCKED
-                - 422 UNPROCESSABLE_ENTITY
-                - 423 LOCKED
-                - 424 FAILED_DEPENDENCY
-                - 425 TOO_EARLY
-                - 426 UPGRADE_REQUIRED
-                - 428 PRECONDITION_REQUIRED
-                - 429 TOO_MANY_REQUESTS
-                - 431 REQUEST_HEADER_FIELDS_TOO_LARGE
-                - 451 UNAVAILABLE_FOR_LEGAL_REASONS
-                - 500 INTERNAL_SERVER_ERROR
-                - 501 NOT_IMPLEMENTED
-                - 502 BAD_GATEWAY
-                - 503 SERVICE_UNAVAILABLE
-                - 504 GATEWAY_TIMEOUT
-                - 505 HTTP_VERSION_NOT_SUPPORTED
-                - 506 VARIANT_ALSO_NEGOTIATES
-                - 507 INSUFFICIENT_STORAGE
-                - 508 LOOP_DETECTED
-                - 509 BANDWIDTH_LIMIT_EXCEEDED
-                - 510 NOT_EXTENDED
-                - 511 NETWORK_AUTHENTICATION_REQUIRED
-  "/cars/getStocks":
-    get:
-      summary: Update an existing pet
-      description: ''
-      tags:
-      - inventory-controller
-      operationId: getStocks
-      responses:
-        '200':
-          description: OK
-          content:
-            "*/*":
-              schema:
-                type: array
-                items:
-                  "$ref": "#/components/schemas/Car"
-  "/cars/delete/{id}":
-    delete:
-      summary: Update an existing pet
-      description: ''
-      tags:
-      - inventory-controller
-      operationId: deleteCarDetails
-      parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: integer
-          format: int64
-      responses:
-        '200':
-          description: OK
-          content:
-            "*/*":
-              schema:
-                type: string
-                enum:
-                - 100 CONTINUE
-                - 101 SWITCHING_PROTOCOLS
-                - 102 PROCESSING
-                - 103 CHECKPOINT
-                - 200 OK
-                - 201 CREATED
-                - 202 ACCEPTED
-                - 203 NON_AUTHORITATIVE_INFORMATION
-                - 204 NO_CONTENT
-                - 205 RESET_CONTENT
-                - 206 PARTIAL_CONTENT
-                - 207 MULTI_STATUS
-                - 208 ALREADY_REPORTED
-                - 226 IM_USED
-                - 300 MULTIPLE_CHOICES
-                - 301 MOVED_PERMANENTLY
-                - 302 FOUND
-                - 302 MOVED_TEMPORARILY
-                - 303 SEE_OTHER
-                - 304 NOT_MODIFIED
-                - 305 USE_PROXY
-                - 307 TEMPORARY_REDIRECT
-                - 308 PERMANENT_REDIRECT
-                - 400 BAD_REQUEST
-                - 401 UNAUTHORIZED
-                - 402 PAYMENT_REQUIRED
-                - 403 FORBIDDEN
-                - 404 NOT_FOUND
-                - 405 METHOD_NOT_ALLOWED
-                - 406 NOT_ACCEPTABLE
-                - 407 PROXY_AUTHENTICATION_REQUIRED
-                - 408 REQUEST_TIMEOUT
-                - 409 CONFLICT
-                - 410 GONE
-                - 411 LENGTH_REQUIRED
-                - 412 PRECONDITION_FAILED
-                - 413 PAYLOAD_TOO_LARGE
-                - 413 REQUEST_ENTITY_TOO_LARGE
-                - 414 URI_TOO_LONG
-                - 414 REQUEST_URI_TOO_LONG
-                - 415 UNSUPPORTED_MEDIA_TYPE
-                - 416 REQUESTED_RANGE_NOT_SATISFIABLE
-                - 417 EXPECTATION_FAILED
-                - 418 I_AM_A_TEAPOT
-                - 419 INSUFFICIENT_SPACE_ON_RESOURCE
-                - 420 METHOD_FAILURE
-                - 421 DESTINATION_LOCKED
-                - 422 UNPROCESSABLE_ENTITY
-                - 423 LOCKED
-                - 424 FAILED_DEPENDENCY
-                - 425 TOO_EARLY
-                - 426 UPGRADE_REQUIRED
-                - 428 PRECONDITION_REQUIRED
-                - 429 TOO_MANY_REQUESTS
-                - 431 REQUEST_HEADER_FIELDS_TOO_LARGE
-                - 451 UNAVAILABLE_FOR_LEGAL_REASONS
-                - 500 INTERNAL_SERVER_ERROR
-                - 501 NOT_IMPLEMENTED
-                - 502 BAD_GATEWAY
-                - 503 SERVICE_UNAVAILABLE
-                - 504 GATEWAY_TIMEOUT
-                - 505 HTTP_VERSION_NOT_SUPPORTED
-                - 506 VARIANT_ALSO_NEGOTIATES
-                - 507 INSUFFICIENT_STORAGE
-                - 508 LOOP_DETECTED
-                - 509 BANDWIDTH_LIMIT_EXCEEDED
-                - 510 NOT_EXTENDED
-                - 511 NETWORK_AUTHENTICATION_REQUIRED
-components:
-  schemas:
-    CarDto:
-      type: object
-      properties:
-        model:
-          type: string
-        manufacturer:
-          type: string
-        country:
-          type: string
-        distribution:
-          type: string
-        engine:
-          type: string
-        firstYear:
-          type: integer
-          format: int64
-        lastYear:
-          type: integer
-          format: int64
-        displacement:
-          type: number
-        power:
-          type: string
-    Car:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        model:
-          type: string
-        manufacturer:
-          type: string
-        country:
-          type: string
-        distribution:
-          type: string
-        engine:
-          type: string
-        firstYear:
-          type: integer
-          format: int64
-        lastYear:
-          type: integer
-          format: int64
-        displacement:
-          type: number
-        power:
-          type: string
+{
+  "swagger" : "2.0", 
+  "produces" : null, 
+  "host" : "", 
+  "info" : {
+    "description" : "Rest APIs", 
+    "title" : "Rest APIs", 
+    "version" : "1.0"
+  }, 
+  "basePath" : "/", 
+  "tags" : [ {
+    "description" : "<p markdown=\"1\">From here you may browse our library of API resources, organized hierarchically by domain, or major functional area, logical subgroup, API resource, and all available operations against that resource. For more information about the concepts and technology behind our API, refer to the [Getting started](C:636f581c-50a8-41a7-af43-e5057f9c20bd) documentation.</p><p>Our platform provides a powerful application programming interface and documentation to help you develop secure, scalable, and high-performance applications that leverage the full breadth of capabilities offered by our backend services.</p><p markdown=\"1\">The Workforce Management suite's API is founded on a pragmatic implementation of the [representational state transfer](http://en.wikipedia.org/wiki/Representational_State_Transfer) architectural style and allows access to your organization's workforce management data using common HTTP methods and the [JSON](http://www.json.org) interchange format.</p>", 
+    "name" : "API"
+  }, {
+    "description" : "<p>This resource allows you to view and manipulate Attendance Actions, which are a configured list of entities that each represent an Attendance consequence.</p><p>Actions in Attendance are symbolic. They represent an informational flag to a human being informing him or her that they need to go do something, such as a manager delivering a verbal warning to an employee. Actions are an output of the Attendance Processor. An Action Definition refers to configuration, while an Action Transaction refers to the output of the Attendance Processor.</p>", 
+    "name" : "Actions", 
+    "x-parent" : "Attendance"
+  }, {
+    "description" : "<p>Attendance automates the process of tracking and enforcing the types of policies that might typically be found in an employee handbook. Missing a punch, being absent, punching in or out too early or too late, or consistently taking longer breaks than allowed are all common examples of the types of employee policies Attendance can be configured to support.</p><p>Attendance works with rules and policies. For example, if an employee is absent three times in a month, your policy might state such an employee is then on probation. A fourth absence in that time period could result in a final warning, and a fifth in termination. Attendance automates the enforcement of such rules in a very configurable way.</p><p markdown=\"1\">Refer to the [Attendance overview](C:64f8248f-e8ee-4c0e-8fb1-c1be60991354) topic in [Domain overviews](C:f2ccfb74-38e7-466a-a7c7-acddc3d2d00c) for more information.</p>", 
+    "name" : "Attendance", 
+    "x-parent" : "API"
+  }, {
+    "description" : "This resource allows you to access auditing records for the Attendance domain.", 
+    "name" : "Attendance Audit Records", 
+    "x-parent" : "Attendance"
+  }, {
+    "description" : "<p>This resource allows you to retrieve attendance profiles.</p>", 
+    "name" : "Attendance Profiles", 
+    "x-parent" : "Attendance"
+  }, {
+    "description" : "<p>This resource allows you to retrieve, update, and delete adjustments to an employee's balances.</p><p>In Attendance, balance adjustments are measured in terms of points or time.</p>", 
+    "name" : "Balance Adjustments", 
+    "x-parent" : "Attendance"
+  }, {
+    "description" : "<p>This resource allows you to access information about an employee's expiring balances.</p><p>In Attendance, balances are measured in terms of points or time.</p>", 
+    "name" : "Balance Expirations", 
+    "x-parent" : "Attendance"
+  }, {
+    "description" : "<p>This resource allows you to delete, reset, and retrieve resets to an employee's balances.</p><p>In Attendance, balance resets are measured in terms of points or time.</p>", 
+    "name" : "Balance Resets", 
+    "x-parent" : "Attendance"
+  }, {
+    "description" : "<p>This resource allows you to access information about an employee's balances.</p><p>In Attendance, balances are measured in terms of points or time.</p>", 
+    "name" : "Balances", 
+    "x-parent" : "Attendance"
+  }, {
+    "description" : "<p>This resource allows you to access information about discipline levels, which are configurable entities in Attendance through which you can group a set of policies in an Attendance profile.</p><p>When a profile is assigned to an employee, that employee can be in only one discipline level at any point of time.</p>", 
+    "name" : "Discipline Levels", 
+    "x-parent" : "Attendance"
+  }, {
+    "description" : "<p>This resource allows you to access Events, a basic component of Attendance.</p><p>Attendance Events determine which data imported from Timekeeping is significant to your organization's policies. Each Event maps to one of the elements Attendance consumes from Timekeeping. Events can map to input from outside the suite as well. For example, a company might choose to track traffic violations for employees who drive company trucks. Events are input for the series of Attendance rules enforced by all active policies.</p>", 
+    "name" : "Events", 
+    "x-parent" : "Attendance"
+  }, {
+    "description" : "This resource allows you to create, retrieve, and delete markers, which represent dates that influence the functionality of the Attendance Processor.", 
+    "name" : "Markers", 
+    "x-parent" : "Attendance"
+  }, {
+    "description" : "<p>This resource allows you to access Perfect Attendance transactions.</p><p>As Discipline Levels measure violations of acceptable behavior, Perfect Attendance provides a way to measure and reward an employee's good behavior.</p>", 
+    "name" : "Perfect Attendance", 
+    "x-parent" : "Attendance"
+  }, {
+    "description" : "<p>This resource allows you to access Perfect Attendance deductions.</p><p>As Discipline Levels measure violations of acceptable behavior, Perfect Attendance provides a way to measure and reward an employee's good behavior.</p>", 
+    "name" : "Perfect Attendance Deductions", 
+    "x-parent" : "Attendance"
+  }, {
+    "description" : "<p>This resource allows you to create, retrieve, update, and delete scheduled requests for the Attendance Processor.</p><p>The Attendance Processor is responsible for extracting data from Timekeeping as well as enforcing the rules that are defined within Attendance Policies. The Attendance Processor runs at defined points in an organization's workflow.</p>", 
+    "name" : "Processor Requests", 
+    "x-parent" : "Attendance"
+  }, {
+    "description" : "This resource allows you to peform general Attendance transactions, such as retrieving Attendance profile assignments for a group of employees within a date range.", 
+    "name" : "Profile Assignments", 
+    "x-parent" : "Attendance"
+  }, {
+    "description" : "<p>This resource allows you to execute Attendance rules.</p><p>Rules in Attendance always evaluate to true or false when executed and serve as the building blocks of Attendance policies. An Attendance consequence occurs for each rule that is evaluated as false.</p>", 
+    "name" : "Rules", 
+    "x-parent" : "Attendance"
+  } ], 
+  "paths" : {
+    "/v1/attendance/actions/complete" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation completes actions for a list of employees whose actions fall within a date range. When an action is completed, this operation sets a completion date for each such action.", 
+        "operationId" : "Complete Actions", 
+        "parameters" : [ {
+          "description" : "The Complete Actions request payload, which contains a list of employees, a start date, an end date, and a completion date.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/CompleteActionsRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success."
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101104] - Start date is required.</li><li>[WAT-101103] - End date is required.</li><li>[WAT-101002] - The date range is invalid. The start date must be on or before the end date.</li><li>[WAT-101105] - An employee ID list is required.</li><li>[WAT-100017] - Complete date is a required field.</li><li>[WAT-100034] - A conflict occurred. The following parameters are mutually exclusive: ids, qualifiers, refs.</li><li>[WAT-101109] - Employee reference list cannot be null or empty.</li><li>[WAT-101110] - The employee parameter {parameterName} cannot be null.</li></ul>"
+          }, 
+          "413" : {
+            "description" : "<ul><li>[WFP-90001] - The service limit has been exceeded by the API operation on {resource} for {X} employees and {Y} days.</li><li>[WFP-90002] - The service limit has been exceeded by the API operation on {resource} for {X} employees.</li></ul>"
+          }
+        }, 
+        "summary" : "Completes actions for one or more employees.", 
+        "tags" : [ "Actions" ]
+      }
+    }, 
+    "/v1/attendance/actions/documents/multi_read" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns all documents associated with a group of actions for a list of employees within a date range.", 
+        "operationId" : "Retrieve Actions' Documents", 
+        "parameters" : [ {
+          "description" : "The Retrieve Actions' Documents request payload, which contains a list of employees and a date range.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/AccessControlledRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/ActionDocument"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101104] - Start date is required.</li><li>[WAT-101103] - End date is required.</li><li>[WAT-101002] - The date range is invalid. The start date must be on or before the end date.</li><li>[WAT-101105] - An employee ID list is required.</li><li>[WAT-100034] - A conflict occurred. The following parameters are mutually exclusive: ids, qualifiers, refs.</li><li>[WAT-101109] - Employee reference list cannot be null or empty.</li><li>[WAT-101110] - The employee parameter {parameterName} cannot be null.</li></ul>"
+          }, 
+          "413" : {
+            "description" : "<ul><li>[WFP-90001] - The service limit has been exceeded by the API operation on {resource} for {X} employees and {Y} days.</li><li>[WFP-90002] - The service limit has been exceeded by the API operation on {resource} for {X} employees.</li></ul>"
+          }
+        }, 
+        "summary" : "Returns all documents associated with a group of actions.", 
+        "tags" : [ "Actions" ]
+      }
+    }, 
+    "/v1/attendance/actions/multi_read" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns all actions for a list of employees within a date range irrespective of their status. Optionally, this operation returns only required actions with an initiated or triggered status for a list of employees within a date range.", 
+        "operationId" : "Retrieve Multiple Actions", 
+        "parameters" : [ {
+          "description" : "The Retrieve Multiple Actions request payload, which contains a list of employees, a start date, an end date, and an optional find required only or completed Boolean.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/ActionRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/Action"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101104] - Start date is required.</li><li>[WAT-101103] - End date is required.</li><li>[WAT-101002] - The date range is invalid. The start date must be on or before the end date.</li><li>[WAT-100034] - A conflict occurred. The following parameters are mutually exclusive: ids, qualifiers, refs.</li><li>[WAT-101109] - Employee reference list cannot be null or empty.</li><li>[WAT-101110] - The employee parameter {parameterName} cannot be null.</li></ul>"
+          }, 
+          "413" : {
+            "description" : "<ul><li>[WFP-90001] - The service limit has been exceeded by the API operation on {resource} for {X} employees and {Y} days.</li><li>[WFP-90002] - The service limit has been exceeded by the API operation on {resource} for {X} employees.</li></ul>"
+          }
+        }, 
+        "summary" : "Returns all or only the required actions for multiple employees.", 
+        "tags" : [ "Actions" ]
+      }
+    }, 
+    "/v1/attendance/actions/{id}" : {
+      "get" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns information about an action by ID. You can choose to execute this operation either from the manager or employee perspective.", 
+        "operationId" : "Retrieve Action by ID", 
+        "parameters" : [ {
+          "description" : "An identifier representing an Attendance Action.", 
+          "format" : "int64", 
+          "in" : "path", 
+          "name" : "id", 
+          "required" : true, 
+          "type" : "integer"
+        }, {
+          "description" : "<em>[Optional]</em> A Boolean indicator of whether or not the operation is executed with a manager role. When false, the operation is executed with an employee role.", 
+          "in" : "query", 
+          "name" : "is_manager_role", 
+          "required" : false, 
+          "type" : "boolean"
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success", 
+            "schema" : {
+              "$ref" : "#/definitions/Action"
+            }
+          }, 
+          "400" : {
+            "description" : "[WAT-100202] - The following action ID does not exist: {id}."
+          }
+        }, 
+        "summary" : "Returns information about an action.", 
+        "tags" : [ "Actions" ]
+      }, 
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation updates an action's completion date and user note by ID. If no completion date is provided, this operation deletes the existing date and returns the action to the initiated status.", 
+        "operationId" : "Update Action by ID", 
+        "parameters" : [ {
+          "description" : "The Update Action by ID request payload, which contains the ID of the action to update, the completion date, and a user note.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/ActionUpdateRequestContext"
+          }
+        }, {
+          "description" : "The ID of an Attendance action.", 
+          "format" : "int64", 
+          "in" : "path", 
+          "name" : "id", 
+          "required" : true, 
+          "type" : "integer"
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "$ref" : "#/definitions/Action"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-100202] - The following action ID does not exist: {id}.</li><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101106] - Parameter is required: {parameterName}.</li></ul>"
+          }, 
+          "409" : {
+            "description" : "[WAT-101014] - The object has been already modified by another person, update version and try again."
+          }
+        }, 
+        "summary" : "Updates an action's completion date and user note.", 
+        "tags" : [ "Actions" ]
+      }
+    }, 
+    "/v1/attendance/actions/{id}/documents" : {
+      "get" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns all the documents associated with an action by ID. You can choose to execute this operation either from the manager or employee perspective.", 
+        "operationId" : "Retrieve Action Documents by ID", 
+        "parameters" : [ {
+          "description" : "The ID of an Attendance action.", 
+          "format" : "int64", 
+          "in" : "path", 
+          "name" : "id", 
+          "required" : true, 
+          "type" : "integer"
+        }, {
+          "description" : "<em>[Optional]</em>A Boolean indicator of whether or not the operation is executed with a manager role. When false, the operation is executed with an employee role.", 
+          "in" : "query", 
+          "name" : "is_manager_role", 
+          "required" : false, 
+          "type" : "boolean"
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/DocumentSingleBinaryResponse"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "[WAT-100202] - The following action ID does not exist: {id}."
+          }
+        }, 
+        "summary" : "Returns all documents associated with an action.", 
+        "tags" : [ "Actions" ]
+      }
+    }, 
+    "/v1/attendance/attendance_profiles" : {
+      "get" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "<p>This operation returns all attendance profiles.</p><br /><p>The associated Access Control Point is WORKFORCE_ATTENDANCE_SETUP.</p>", 
+        "operationId" : "Retrieve All Attendance Profiles", 
+        "parameters" : [ {
+          "default" : true, 
+          "description" : "A Boolean indicator of whether or not the response returns all details of each attendance profile. When false, the response returns only the ID and name of each attendance profile.", 
+          "in" : "query", 
+          "name" : "all_details", 
+          "required" : false, 
+          "type" : "boolean"
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/AttendanceProfile"
+              }, 
+              "type" : "array"
+            }
+          }
+        }, 
+        "summary" : "Returns all attendance profiles.", 
+        "tags" : [ "Attendance Profiles" ]
+      }
+    }, 
+    "/v1/attendance/attendance_profiles/multi_read" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "<p>This operation returns attendance profiles by object references.</p><br /><p>The associated Access Control Point is WORKFORCE_ATTENDANCE_SETUP.</p>", 
+        "operationId" : "Retrieve Attendance Profiles", 
+        "parameters" : [ {
+          "description" : "Attendance Profile request: contains a list of ids, qualifiers, persistentId or refs.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/Multi Read Request for attendance Profiles"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "$ref" : "#/definitions/AttendanceProfile"
+            }
+          }, 
+          "207" : {
+            "description" : "<ul><li>[WAT-100228] - Some of the attendance profiles were not exported because of errors in the source data. Correct those errors and try again.</li></ul>"
+          }, 
+          "400" : {
+            "description" : "<p>Bad Request:</p><ul><li>[WAT-101005] - A request cannot be empty.</li><li>[WAT-101106] - Parameter is required: {parameterName}.</li><li>[WAT-100224] - Request contains multiple parameters.</li><li>[WAT-100225] - Attendance Profile does not exist.</li><li>[WAT-100226] - Attendance Profile by given name does not exist.</li><li>[WAT-100227] - Attendance Profile by given persistent id does not exist.</li><li>[WAT-100228] - Multi-Read request is partially successful.</li><li>[WAT-100229] - Atleast one parameter from id/qualifier/persistentId/ref is required.</li></ul>"
+          }
+        }, 
+        "summary" : "Returns attendance profiles.", 
+        "tags" : [ "Attendance Profiles" ]
+      }
+    }, 
+    "/v1/attendance/attendance_profiles/{id}" : {
+      "get" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "<p>This operation returns an attendance profile by ID.</p><br /><p>The associated Access Control Point is WORKFORCE_ATTENDANCE_SETUP.</p>", 
+        "operationId" : "Retrieve Attendance Profile by ID", 
+        "parameters" : [ {
+          "description" : "The ID of an attendance profile.", 
+          "format" : "int64", 
+          "in" : "path", 
+          "name" : "id", 
+          "required" : true, 
+          "type" : "integer"
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "$ref" : "#/definitions/AttendanceProfile"
+            }
+          }, 
+          "400" : {
+            "description" : "<p>Bad Request:</p><ul><li>[WAT-100225] - Attendance Profile does not exist.</li><ul>"
+          }
+        }, 
+        "summary" : "Returns an attendance profile.", 
+        "tags" : [ "Attendance Profiles" ]
+      }
+    }, 
+    "/v1/attendance/audit_records/multi_read" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns auditing records for the specified auditing entities and employees within a date range. If auditing entities are not specified in a request, all entities are returned. Note that the start date and end date may have different meanings for different entity types, and that entities of different types may contain different properties.", 
+        "operationId" : "Retrieve Attendance Audit Records", 
+        "parameters" : [ {
+          "description" : "The Retrieve Attendance Audit Records request payload, which contains a list of employees, start date, end date, and a list of auditing entities.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/AttendanceAuditDataRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/AttendanceAuditData"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101005] - A request cannot be empty.</li><li>[WAT-101001] - The date or time format is invalid.</li><li>[WAT-101104] - Start date is required.</li><li>[WAT-101103] - End date is required.</li><li>[WAT-101002] - The date range is invalid. The start date must be on or before the end date.</li><li>[WAT-101105] - An employee ID list is required.</li><li>[WAT-101024] - The entity type {entityType} is not supported. Supported types include the following: {supportedEntityTypes}.</li><li>[WAT-100034] - A conflict occurred. The following parameters are mutually exclusive: ids, qualifiers, refs.</li><li>[WAT-101109] - Employee reference list cannot be null or empty.</li><li>[WAT-101110] - The employee parameter {parameterName} cannot be null.</li></ul>"
+          }, 
+          "413" : {
+            "description" : "<ul><li>[WFP-90001] - The service limit has been exceeded by the API operation on {resource} for {X} employees and {Y} days.</li><li>[WFP-90002] - The service limit has been exceeded by the API operation on {resource} for {X} employees.</li></ul>"
+          }
+        }, 
+        "summary" : "Returns auditing records for auditing entities and employees within a date range.", 
+        "tags" : [ "Attendance Audit Records" ]
+      }
+    }, 
+    "/v1/attendance/balance_adjustments" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation updates balances for a list of employees within a date range based on a balance type and returns a list of balance adjustment IDs.", 
+        "operationId" : "Update and Return Balances", 
+        "parameters" : [ {
+          "description" : "The Update and Return Balances request payload, which contains a list of employees, balance type, and update date.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/UpdateBalanceRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/PointTransaction"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101105] - An employee ID list is required.</li><li>[WAT-100102] - A Balance Update date is required.</li><li>[WAT-101101] - An amount is required.</li><li>[WAT-100002] - The amount exceeds the min/max value specified for the Balance type.</li><li>[WAT-100103] - Starting Balance is required for Balance type: {type}.</li></ul>"
+          }
+        }, 
+        "summary" : "Updates balances for employees.", 
+        "tags" : [ "Balance Adjustments" ]
+      }
+    }, 
+    "/v1/attendance/balance_adjustments/multi_read" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns point balance adjustments for a list of employees within a date range.", 
+        "operationId" : "Retrieve Balance Adjustments", 
+        "parameters" : [ {
+          "description" : "The Retrieve Balance Adjustments request payload, which contains a list of employees, start date, and end date.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/GetBalancesRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/BalanceAdjustment_DomainService"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101104] - Start date is required.</li><li>[WAT-101103] - End date is required.</li><li>[WAT-101002] - The date range is invalid. The start date must be on or before the end date.</li><li>[WAT-101105] - An employee ID list is required.</li><li>[WAT-100218] - The following Balance type category does not exist: {type}.</li></ul>"
+          }, 
+          "413" : {
+            "description" : "<ul><li>[WFP-90001] - The service limit has been exceeded by the API operation on {resource} for {X} employees and {Y} days.</li><li>[WFP-90002] - The service limit has been exceeded by the API operation on {resource} for {X} employees.</li></ul>"
+          }
+        }, 
+        "summary" : "Returns point balance adjustments.", 
+        "tags" : [ "Balance Adjustments" ]
+      }
+    }, 
+    "/v1/attendance/balance_adjustments/multi_update" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation updates balances for a list of employees within a date range based on a balance type and returns a list of balance adjustment IDs.", 
+        "operationId" : "Bulk Update and Return Balances", 
+        "parameters" : [ {
+          "description" : "The Update and Return Balances request payload, which contains an array of objects, each of which contains a list of employees, balance type, and update date.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "items" : {
+              "$ref" : "#/definitions/UpdateBalanceRequestContext"
+            }, 
+            "type" : "array"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/PointTransaction"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-100221] - Bulk import operation completed with error(s).</li><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101105] - An employee ID list is required.</li><li>[WAT-100102] - A Balance Update date is required.</li><li>[WAT-101101] - An amount is required.</li><li>[WAT-100002] - The amount exceeds the min/max value specified for the Balance type.</li><li>[WAT-100103] - Starting Balance is required for Balance type: {type}.</li></ul>"
+          }
+        }, 
+        "summary" : "Updates balances for employees for multiple balance types.", 
+        "tags" : [ "Balance Adjustments" ]
+      }
+    }, 
+    "/v1/attendance/balance_adjustments/{id}/mark_deleted" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation marks point balance adjustments for deletion by ID.", 
+        "operationId" : "Mark Balance Adjustments for Deletion by ID", 
+        "parameters" : [ {
+          "description" : "The ID of a point balance adjustment.", 
+          "format" : "int64", 
+          "in" : "path", 
+          "name" : "id", 
+          "required" : true, 
+          "type" : "integer"
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "204" : {
+            "description" : "Success."
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-100006] - Only manual Point Balance Adjustments can be deleted.</li><li>[WAT-100205] - The following Point Balance Adjustment ID does not exist: {id}.</li></ul>"
+          }
+        }, 
+        "summary" : "Marks point balance adjustments for deletion.", 
+        "tags" : [ "Balance Adjustments" ]
+      }
+    }, 
+    "/v1/attendance/balance_expirations/multi_read" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns expiring points for a list of employees within a date range.", 
+        "operationId" : "Retrieve Expiring Balances", 
+        "parameters" : [ {
+          "description" : "The Retrieve Expiring Balances request payload, which contains a list of employees, start date, and end date.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/AccessControlledRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/AttendanceExpiringBalance_DomainService"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101104] - Start date is required.</li><li>[WAT-101103] - End date is required.</li><li>[WAT-101002] - The date range is invalid. The start date must be on or before the end date.</li><li>[WAT-101105] - An employee ID list is required.</li></ul>"
+          }, 
+          "413" : {
+            "description" : "<ul><li>[WFP-90001] - The service limit has been exceeded by the API operation on {resource} for {X} employees and {Y} days.</li><li>[WFP-90002] - The service limit has been exceeded by the API operation on {resource} for {X} employees.</li></ul>"
+          }
+        }, 
+        "summary" : "Returns expiring points for employees.", 
+        "tags" : [ "Balance Expirations" ]
+      }
+    }, 
+    "/v1/attendance/balance_resets" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation resets the balances for a list of employees within a date range and based on a balance type and returns a list of the reset balances.", 
+        "operationId" : "Reset Balances", 
+        "parameters" : [ {
+          "description" : "The Reset Balances request payload, which contains a list of employees, balance types, and reset date.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/ResetBalanceRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/PointBalance"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101105] - An employee ID list is required.</li><li>[WAT-100101] - A Balance Reset date is required.</li><li>[WAT-100002] - The amount exceeds the min/max value specified for the Balance type.</li><li>[WAT-100210] - The following Balance definition does not exist: {type}.</li></ul>"
+          }
+        }, 
+        "summary" : "Resets balances for employees.", 
+        "tags" : [ "Balance Resets" ]
+      }
+    }, 
+    "/v1/attendance/balance_resets/multi_read" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns balance resets for a list of employees within a date range.", 
+        "operationId" : "Retrieve Balance Resets", 
+        "parameters" : [ {
+          "description" : "The Retrieve Balance Resets request payload, which contains a list of employees, start date, end date, and balance types.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/GetBalancesRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/BalanceReset"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101104] - Start date is required.</li><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101002] - The date range is invalid. The start date must be on or before the end date.</li><li>[WAT-101105] - An employee ID list is required.</li><li>[WAT-100218] - The following Balance type category does not exist: {type}.</li></ul>"
+          }, 
+          "413" : {
+            "description" : "<ul><li>[WFP-90001] - The service limit has been exceeded by the API operation on {resource} for {X} employees and {Y} days.</li><li>[WFP-90002] - The service limit has been exceeded by the API operation on {resource} for {X} employees.</li></ul>"
+          }
+        }, 
+        "summary" : "Returns point balance resets for employees.", 
+        "tags" : [ "Balance Resets" ]
+      }
+    }, 
+    "/v1/attendance/balance_resets/multi_update" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation resets the balances for a list of employees within a date range and based on a balance type and returns a list of the reset balances.", 
+        "operationId" : "Bulk Reset Balances", 
+        "parameters" : [ {
+          "description" : "The Bulk Reset Balances request payload, which contains an array of objects, each of which contains a list of employees, balance types, and reset date.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "items" : {
+              "$ref" : "#/definitions/ResetBalanceRequestContext"
+            }, 
+            "type" : "array"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/PointBalance"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-100221] - Bulk import operation completed with error(s).</li><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101105] - An employee ID list is required.</li><li>[WAT-100101] - A Balance Reset date is required.</li><li>[WAT-100002] - The amount exceeds the min/max value specified for the Balance type.</li><li>[WAT-100210] - The following Balance definition does not exist: {type}.</li></ul>"
+          }
+        }, 
+        "summary" : "Resets balances for employees for multiple balance types.", 
+        "tags" : [ "Balance Resets" ]
+      }
+    }, 
+    "/v1/attendance/balance_resets/{id}/mark_deleted" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation marks point balance resets for deletion by ID.", 
+        "operationId" : "Mark Balance Resets for Deletion by ID", 
+        "parameters" : [ {
+          "description" : "The ID of a point balance reset.", 
+          "format" : "int64", 
+          "in" : "path", 
+          "name" : "id", 
+          "required" : true, 
+          "type" : "integer"
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "204" : {
+            "description" : "Success."
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-100007] - Only manual Point Balance Resets can be deleted.</li></ul>"
+          }
+        }, 
+        "summary" : "Marks point balance resets for deletion.", 
+        "tags" : [ "Balance Resets" ]
+      }
+    }, 
+    "/v1/attendance/balances/multi_read" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns point balance summaries for a list of employees within a date range.", 
+        "operationId" : "Retrieve Balances", 
+        "parameters" : [ {
+          "description" : "The Retrieve Balances request payload, which contains a list of employees, a start date, and an end date.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/AccessControlledRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/DayBalance"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101104] - Start date is required.</li><li>[WAT-101103] - End date is required.</li><li>[WAT-101002] - The date range is invalid. The start date must be on or before the end date.</li><li>[WAT-101105] - An employee ID list is required.</li><li>[WAT-100034] - A conflict occurred. The following parameters are mutually exclusive: ids, qualifiers, refs.</li><li>[WAT-101109] - Employee reference list cannot be null or empty.</li><li>[WAT-101110] - The employee parameter {parameterName} cannot be null.</li></ul>"
+          }, 
+          "413" : {
+            "description" : "<ul><li>[WFP-90001] - The service limit has been exceeded by the API operation on {resource} for {X} employees and {Y} days.</li><li>[WFP-90002] - The service limit has been exceeded by the API operation on {resource} for {X} employees.</li></ul>"
+          }
+        }, 
+        "summary" : "Returns point balance summaries for employees.", 
+        "tags" : [ "Balances" ]
+      }
+    }, 
+    "/v1/attendance/discipline_levels/multi_read" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns the discipline levels for a list of employees within a date range. If <code>includeDailyDiscLevels</code> is true, the discipline level for every day in the date range is returned. If <code>includeDailyDiscLevels</code> is false, only discipline level changes are returned.", 
+        "operationId" : "Retrieve Discipline Levels", 
+        "parameters" : [ {
+          "description" : "The Retrieve Discipline Levels request payload, which contains a list of employees, a date range, and a daily value Boolean.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/DisciplineLevelTransactionRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Resource found.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/DisciplineLevelTransaction"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101104] - Start date is required.</li><li>[WAT-101103] - End date is required.</li><li>[WAT-101002] - The date range is invalid. The start date must be on or before the end date.</li><li>[WAT-101105] - An employee ID list is required.</li><li>[WAT-100034] - A conflict occurred. The following parameters are mutually exclusive: ids, qualifiers, refs.</li><li>[WAT-101109] - Employee reference list cannot be null or empty.</li><li>[WAT-101110] - The employee parameter {parameterName} cannot be null.</li></ul>"
+          }, 
+          "413" : {
+            "description" : "<ul><li>[WFP-90001] - The service limit has been exceeded by the API operation on {resource} for {X} employees and {Y} days.</li><li>[WFP-90002] - The service limit has been exceeded by the API operation on {resource} for {X} employees.</li></ul>"
+          }
+        }, 
+        "summary" : "Returns discipline levels for employees.", 
+        "tags" : [ "Discipline Levels" ]
+      }
+    }, 
+    "/v1/attendance/events" : {
+      "get" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "<p>This operation returns events that resulted in a specified action.</p><p><strong>Note:</strong> Perfect Attendance actions return an empty event list.</p>", 
+        "operationId" : "Retrieve Events by Action", 
+        "parameters" : [ {
+          "description" : "The ID of an Attendance Action.", 
+          "format" : "int64", 
+          "in" : "query", 
+          "name" : "action_id", 
+          "required" : true, 
+          "type" : "integer"
+        }, {
+          "description" : "The pagination index, which represents the particular page of events to return in the response.", 
+          "format" : "int32", 
+          "in" : "query", 
+          "name" : "index", 
+          "required" : false, 
+          "type" : "integer"
+        }, {
+          "description" : "The pagination count, which represents the number of schedule groups to return per page. This parameter has no upper limit.", 
+          "format" : "int32", 
+          "in" : "query", 
+          "name" : "count", 
+          "required" : false, 
+          "type" : "integer"
+        }, {
+          "description" : "A Boolean indicator of whether or not the operation is executed with a manager role. When false, the operation is executed with an employee role.", 
+          "in" : "query", 
+          "name" : "is_manager_role", 
+          "required" : false, 
+          "type" : "boolean"
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/AttenandaceEvent_DomainService"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "[WAT-100202] - The following Action ID does not exist: {id}."
+          }
+        }, 
+        "summary" : "Returns events that resulted in a specified action.", 
+        "tags" : [ "Events" ]
+      }
+    }, 
+    "/v1/attendance/events/multi_create" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation creates basic Attendance events for one or more employees.", 
+        "operationId" : "Create Events", 
+        "parameters" : [ {
+          "description" : "A Boolean indicator of whether or not processing continues if errors are encountered. Defaults to false.", 
+          "in" : "query", 
+          "name" : "partial_success", 
+          "required" : false, 
+          "type" : "boolean"
+        }, {
+          "description" : "The Create Events request payload.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "items" : {
+              "$ref" : "#/definitions/AttenandaceEvent"
+            }, 
+            "type" : "array"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/AttenandaceEvent_DomainService"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "207" : {
+            "description" : "<ul><li>[WAT-100222] - Some Unknown Error Occurred. Error Details Not Available</li></ul>", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/AttenandaceEvent_DomainService"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101011] - Invalid parameter:{parameterName}.</li><li>[WAT-101100] - A date is required.</li><li>[WAT-100100] - An Event time is required.</li><li>[WAT-101102] - An employee ID is required.</li><li>[WAT-100211] - Event definition ID is required.</li><li>[WAT-100006] - The following Event definition does not exist: {id}.</li><li>[WAT-100000] - An Event cannot have both a day and time amount..</li><li>[WAT-101101] - An amount is required.</li><li>[WAT-101001] - The date or time format is invalid.</li><li>[WAT-100200] - The following Event ID does not exist: {id}.</li></ul>"
+          }
+        }, 
+        "summary" : "Creates events for one or more employees.", 
+        "tags" : [ "Events" ]
+      }
+    }, 
+    "/v1/attendance/events/multi_read" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns events for a list of employees within a date range.", 
+        "operationId" : "Retrieve Events", 
+        "parameters" : [ {
+          "description" : "The Retrieve Events request payload, which contains a list of employees, a start date, an end date, and an Exclude Inconsequential Events Boolean.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/EventRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/AttenandaceEvent_DomainService"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101104] - Start date is required.</li><li>[WAT-101103] - End date is required.</li><li>[WAT-101104] - Start date is required.</li><li>[WAT-101105] - An employee ID list is required.</li><li>[WAT-101002] - The date range is invalid. The start date must be on or before the end date.</li><li>[WAT-100034] - A conflict occurred. The following parameters are mutually exclusive: ids, qualifiers, refs.</li><li>[WAT-101109] - Employee reference list cannot be null or empty.</li><li>[WAT-101110] - The employee parameter {parameterName} cannot be null.</li></ul>"
+          }, 
+          "413" : {
+            "description" : "<ul><li>[WFP-90001] - The service limit has been exceeded by the API operation on {resource} for {X} employees and {Y} days.</li><li>[WFP-90002] - The service limit has been exceeded by the API operation on {resource} for {X} employees.</li></ul>"
+          }
+        }, 
+        "summary" : "Returns events.", 
+        "tags" : [ "Events" ]
+      }
+    }, 
+    "/v1/attendance/events/types" : {
+      "get" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns a list of the following event types: basic, pattern, combined, lost_time, and perfect_attendance.", 
+        "operationId" : "Retrieve Event Types", 
+        "parameters" : [ {
+          "description" : "<em>[Optional]</em> A Boolean indicator of whether or not the operation is executed with a manager role. When false, the operation is executed with an employee role.", 
+          "in" : "query", 
+          "name" : "is_manager_role", 
+          "required" : false, 
+          "type" : "boolean"
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/EventGroup"
+              }, 
+              "type" : "array"
+            }
+          }
+        }, 
+        "summary" : "Returns a list of event types.", 
+        "tags" : [ "Events" ]
+      }
+    }, 
+    "/v1/attendance/events/{id}" : {
+      "delete" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation deletes a basic Attendance event by ID. The following event types cannot be deleted: patterns, combined events, lost time events, and perfect Attendance events.", 
+        "operationId" : "Delete Event by ID", 
+        "parameters" : [ {
+          "description" : "The ID of an Attendance event.", 
+          "format" : "int64", 
+          "in" : "path", 
+          "name" : "id", 
+          "required" : true, 
+          "type" : "integer"
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "204" : {
+            "description" : "Success."
+          }, 
+          "400" : {
+            "description" : "[WAT-100200] - The following Event ID does not exist: {id}."
+          }
+        }, 
+        "summary" : "Deletes a basic event.", 
+        "tags" : [ "Events" ]
+      }, 
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation updates a basic attendance event by ID.", 
+        "operationId" : "Update Event by ID", 
+        "parameters" : [ {
+          "description" : "Event to be updated", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/AttenandaceEvent"
+          }
+        }, {
+          "description" : "The ID of an Attendance event.", 
+          "format" : "int64", 
+          "in" : "path", 
+          "name" : "id", 
+          "required" : true, 
+          "type" : "integer"
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "$ref" : "#/definitions/AttenandaceEvent_DomainService"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101000] - A date must be provided.</li><li>[WAT-100004] - An event time must be provided.</li><li>[WAT-101102] - An employee ID is required.</li><li>[WAT-100211] - Event definition ID is required.</li><li>[WAT-100006] - The following Event definition ID does not exist: {id}.</li><li>[WAT-100000] - An Event cannot have both a day and time amount.</li><li>[WAT-100001] - Deleted Events cannot be modified.</li><li>[WAT-101001] - The date or time format is invalid.</li><li>[WAT-100200] - The following Event ID does not exist: {id}.</li></ul>"
+          }
+        }, 
+        "summary" : "Updates an event.", 
+        "tags" : [ "Events" ]
+      }
+    }, 
+    "/v1/attendance/events/{id}/mark_deleted" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation marks a basic attendance event as deleted by ID. The following event types cannot be marked as deleted: patterns, combined events, lost time events, and perfect Attendance events.", 
+        "operationId" : "Mark Event as Deleted by ID", 
+        "parameters" : [ {
+          "description" : "The ID of an Attendance Event.", 
+          "format" : "int64", 
+          "in" : "path", 
+          "name" : "id", 
+          "required" : true, 
+          "type" : "integer"
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "204" : {
+            "description" : "Success."
+          }, 
+          "400" : {
+            "description" : "[WAT-100200] - The following Event ID does not exist: {id}."
+          }
+        }, 
+        "summary" : "Marks an event as deleted.", 
+        "tags" : [ "Events" ]
+      }
+    }, 
+    "/v1/attendance/events/{type}/{id}" : {
+      "get" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns an event by an ID and type. The following are valid values for type: basic, pattern, combined, lost_time, and perfect_attendance.", 
+        "operationId" : "Retrieve Event by ID", 
+        "parameters" : [ {
+          "description" : "The ID of an Attendance event.", 
+          "format" : "int64", 
+          "in" : "path", 
+          "name" : "id", 
+          "required" : true, 
+          "type" : "integer"
+        }, {
+          "description" : "Type of an Attendance event.", 
+          "in" : "path", 
+          "name" : "type", 
+          "required" : true, 
+          "type" : "string"
+        }, {
+          "description" : "<em>[Optional]</em> A Boolean indicator of whether or not the operation is executed with a manager role. When false, the operation is executed with an employee role.", 
+          "in" : "query", 
+          "name" : "is_manager_role", 
+          "required" : false, 
+          "type" : "boolean"
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "$ref" : "#/definitions/AttenandaceEvent_DomainService"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-100201] - The following Event type does not exist: {type}.</li><li>[WAT-100200] - The following Event ID does not exist: {id}.</li></ul>"
+          }
+        }, 
+        "summary" : "Returns an event.", 
+        "tags" : [ "Events" ]
+      }
+    }, 
+    "/v1/attendance/markers/multi_create" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation creates or updates Ignore History Markers or Ignore Timecard Markers for a list of employees. When an Ignore History Marker is added to an employee record, Attendance events earlier that the Ignore History Marker date are not processed. When an Ignore Timecard Marker is added to an employee record, Attendance events earlier than the Ignore Timecard Marker date are not processed.", 
+        "operationId" : "Create or Update Ignore Markers", 
+        "parameters" : [ {
+          "description" : "The Create or Update Ignore Markers request payload, which contains a marker type, a list of employees, and a date.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/UpsertDateMarkerRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/EmployeeProcInfo"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101105] - An employee id list is required.</li><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101023] - The marker type {markerType} is not valid.</li><li>[WAT-101107] - A A marker type is required.</li></ul>"
+          }
+        }, 
+        "summary" : "Creates or updates Ignore History Markers or Ignore Timecard Markers for employees.", 
+        "tags" : [ "Markers" ]
+      }
+    }, 
+    "/v1/attendance/markers/multi_delete" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation removes Ignore History Markers or Ignore Timecard Markers for a list of employees. When an Ignore History Marker is removed from an employee record, all Attendance events are processed. When an Ignore Timecard Marker is removed from an employee record, the Attendance Processor no longer ignores Timecard data preceding the Ignore Timecard Marker date.", 
+        "operationId" : "Remove Ignore Markers", 
+        "parameters" : [ {
+          "description" : "The Remove Ignore Markers request payload, which contains a marker type and a list of employees.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/DeleteDateMarkerRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "204" : {
+            "description" : "Success."
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101105] - An employee id list is required.</li><li>[WAT-101023] - The marker type {markerType} is not valid.</li><li>[WAT-101107] - A A marker type is required.</li><li>[WAT-100208] - Ignore History Marker does not exist for the following employees: {ids}</li><li>[WAT-100209] - Ignore Timecard Data Marker does not exist for the following employees: {ids}.</li></ul>"
+          }
+        }, 
+        "summary" : "Removes Ignore History Markers or Ignore Timecard Markers for employees.", 
+        "tags" : [ "Markers" ]
+      }
+    }, 
+    "/v1/attendance/markers/multi_read" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns history and Timecard data markers for a list of employees.", 
+        "operationId" : "Retrieve Markers", 
+        "parameters" : [ {
+          "description" : "The Retrieve Markers request payload, which contains a list of employees and an optional start date and end date.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/AccessControlledRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/EmployeeProcInfo"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101105] - An employee ID list is required.</li><li>[WAT-100034] - A conflict occurred. The following parameters are mutually exclusive: ids, qualifiers, refs.</li><li>[WAT-101109] - Employee reference list cannot be null or empty.</li><li>[WAT-101110] - The employee parameter {parameterName} cannot be null.</li></ul>"
+          }, 
+          "413" : {
+            "description" : "<ul><li>[WFP-90001] - The service limit has been exceeded by the API operation on {resource} for {X} employees and {Y} days.</li><li>[WFP-90002] - The service limit has been exceeded by the API operation on {resource} for {X} employees.</li></ul>"
+          }
+        }, 
+        "summary" : "Returns history and Timecard data markers.", 
+        "tags" : [ "Markers" ]
+      }
+    }, 
+    "/v1/attendance/perfect_attendance/multi_read" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns Perfect Attendance awards and violations for a list of employees within a date range.", 
+        "operationId" : "Retrieve Perfect Attendance Transactions", 
+        "parameters" : [ {
+          "description" : "The Retrieve Perfect Attendance Transactions request payload, which contains a list of employees, a start date, and an end date.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/AccessControlledRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/PerfectAttendance"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101000] - The date format is invalid</li> <li> [WAt-101104] - Start date is required</li> <li> [101103] - End date is required </li> <li>[WAT-101002] - The date range is invalid. The start date must be on or before the end date</li> <li> [WAT-101105] - An employee ID list is required</li> <li>[WAT-100034] - A conflict occurred. The following parameters are mutually exclusive: ids, qualifiers, refs.</li><li>[WAT-101109] - Employee reference list cannot be null or empty.</li><li>[WAT-101110] - The employee parameter {parameterName} cannot be null.</li></ul>"
+          }, 
+          "413" : {
+            "description" : "<ul><li>[WFP-90001] - The service limit has been exceeded by the API operation on {resource} for {X} employees and {Y} days.</li><li>[WFP-90002] - The service limit has been exceeded by the API operation on {resource} for {X} employees.</li></ul>"
+          }
+        }, 
+        "summary" : "Returns Perfect Attendance awards and violations.", 
+        "tags" : [ "Perfect Attendance" ]
+      }
+    }, 
+    "/v1/attendance/perfect_attendance_deductions/multi_read" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns Perfect Attendance deductions for a list of employees within a date range.", 
+        "operationId" : "Retrieve Perfect Attendance Deductions", 
+        "parameters" : [ {
+          "description" : "The Retrieve Perfect Attendance Deductions request payload, which contains a list of employees, a start date, and an end date.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/AccessControlledRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/PerfectAttendanceDeduction"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101104] - Start date is required.</li><li>[WAT-101103] - End date is required.</li><li>[WAT-101002] - The date range is invalid. The start date must be on or before the end date.</li><li>[WAT-101105] - An employee ID list is required.</li><li>[WAT-100034] - A conflict occurred. The following parameters are mutually exclusive: ids, qualifiers, refs.</li><li>[WAT-101109] - Employee reference list cannot be null or empty.</li><li>[WAT-101110] - The employee parameter {parameterName} cannot be null.</li></ul>"
+          }, 
+          "413" : {
+            "description" : "<ul><li>[WFP-90001] - The service limit has been exceeded by the API operation on {resource} for {X} employees and {Y} days.</li><li>[WFP-90002] - The service limit has been exceeded by the API operation on {resource} for {X} employees.</li></ul>"
+          }
+        }, 
+        "summary" : "Returns Perfect Attendance deductions.", 
+        "tags" : [ "Perfect Attendance Deductions" ]
+      }
+    }, 
+    "/v1/attendance/processor_requests" : {
+      "get" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns all Attendance Processor requests.", 
+        "operationId" : "Retrieve Attendance Processor Requests", 
+        "parameters" : [  ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/ProcessorRequest"
+              }, 
+              "type" : "array"
+            }
+          }
+        }, 
+        "summary" : "Returns all Attendance Processor requests.", 
+        "tags" : [ "Processor Requests" ]
+      }, 
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation creates an Attendance Processor request.", 
+        "operationId" : "Create Attendance Processor Request", 
+        "parameters" : [ {
+          "description" : "Data Transfer Object (DTO) for the Create Attendance Processor Request operation.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/ProcessorRequest"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "$ref" : "#/definitions/ProcessorRequest"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-100112] - A processor request name is required.</li><li>[WAT-100018] - The processor request qualifier must be less than 200 symbols.</li><li>[WAT-100021] - A processor request with the specified name already exists: {name}.</li><li>[WAT-100114] - A processor request days to trancate parameter is required.</li><li>[WAT-100020] - The processor request days-to-truncate value must be between 0 and 365 days.</li><li>[WAT-100115] - A processor request schedule is required.</li><li>[WAT-100117] - A processor request schedule frequency type is required.</li><li>[WAT-100112] - A processor request schedule dates are required.</li><li>[WAT-100113] - A processor request hyperfind query id is required.</li><li>[WAT-100022] - The processor request Hyperfind query {id} is not valid for user {name}.</li><li>[WAT-101200] - The following employee id does not exist: {id}.</li></ul>"
+          }
+        }, 
+        "summary" : "Creates an Attendance Processor request.", 
+        "tags" : [ "Processor Requests" ]
+      }
+    }, 
+    "/v1/attendance/processor_requests/{id}" : {
+      "delete" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation deletes an Attendance Processor request by ID.", 
+        "operationId" : "Delete Attendance Processor Request by ID", 
+        "parameters" : [ {
+          "description" : "The ID of an Attendance Processor request.", 
+          "format" : "int64", 
+          "in" : "path", 
+          "name" : "id", 
+          "required" : true, 
+          "type" : "integer"
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "204" : {
+            "description" : "Success."
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-100213] - The following Attendance Processor Request does not exist: {id}.</li><li>[WAT-100214] - The following related processor request event does not exist: {id}.</li></ul>"
+          }
+        }, 
+        "summary" : "Deletes an Attendance Processor request.", 
+        "tags" : [ "Processor Requests" ]
+      }, 
+      "get" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns an Attendance Processor request by ID.", 
+        "operationId" : "Retrieve Attendance Processor Request by ID", 
+        "parameters" : [ {
+          "description" : "The ID of an Attendance Processor request.", 
+          "format" : "int64", 
+          "in" : "path", 
+          "name" : "id", 
+          "required" : true, 
+          "type" : "integer"
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "$ref" : "#/definitions/ProcessorRequest"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-100213] - The following Attendance Processor Request does not exist: {id}.</li><li>[WAT-100214] - The following related processor request event does not exist: {id}.</li></ul>"
+          }
+        }, 
+        "summary" : "Returns an Attendance Processor request.", 
+        "tags" : [ "Processor Requests" ]
+      }, 
+      "put" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation updates an existing Attendance Processor request by ID.", 
+        "operationId" : "Update Attendance Processor Request by ID", 
+        "parameters" : [ {
+          "description" : "The ID of an Attendance Processor request.", 
+          "format" : "int64", 
+          "in" : "path", 
+          "name" : "id", 
+          "required" : true, 
+          "type" : "integer"
+        }, {
+          "description" : "Data Transfer Object (DTO) for the Update Attendance Processor Request operation.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/ProcessorRequest"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "$ref" : "#/definitions/ProcessorRequest"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-100018] - The processor request qualifier must be less than 200 symbols.</li><li>[WAT-100021] - A processor request with the specified name already exists: {name}.</li><li>[WAT-100020] - The processor request days-to-truncate value must be between 0 and 365 days.</li><li>[WAT-100117] - A processor request schedule frequency type is required.</li><li>[WAT-100112] - A processor request schedule dates are required.</li><li>[WAT-100022] - The processor request Hyperfind query {id} is not valid for user {name}.\"</li><li>[WAT-100213] - The following Attendance Processor Request does not exist: {id}.</li><li>[WAT-100214] - The following related processor request event does not exist: {id}.</li><li>[WAT-101200] - The following employee id does not exist: {id}.</li></ul>"
+          }
+        }, 
+        "summary" : "Updates an Attendance Processor request.", 
+        "tags" : [ "Processor Requests" ]
+      }
+    }, 
+    "/v1/attendance/profiles_assignments/multi_read" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation returns profile assignments for a list of employees within a date range.", 
+        "operationId" : "Retrieve Profile Assignments", 
+        "parameters" : [ {
+          "description" : "The Retrieve Profile Assignments request payload, which contains a list of employees, a start date, and an end date.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/AccessControlledRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success.", 
+            "schema" : {
+              "items" : {
+                "$ref" : "#/definitions/ProfileAssignment"
+              }, 
+              "type" : "array"
+            }
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101104] - Start date is required.</li><li>[WAT-101103] - End date is required.</li><li>[WAT-101002] - The date range is invalid. The start date must be on or before the end date.</li><li>[WAT-101105] - An employee ID list is required.</li><li>[WAT-100034] - A conflict occurred. The following parameters are mutually exclusive: ids, qualifiers, refs.</li><li>[WAT-101109] - Employee reference list cannot be null or empty.</li><li>[WAT-101110] - The employee parameter {parameterName} cannot be null.</li></ul>"
+          }, 
+          "413" : {
+            "description" : "<ul><li>[WFP-90001] - The service limit has been exceeded by the API operation on {resource} for {X} employees and {Y} days.</li><li>[WFP-90002] - The service limit has been exceeded by the API operation on {resource} for {X} employees.</li></ul>"
+          }
+        }, 
+        "summary" : "Returns profile assignments for employees.", 
+        "tags" : [ "Profile Assignments" ]
+      }
+    }, 
+    "/v1/attendance/rules/execute" : {
+      "post" : {
+        "consumes" : [ "application/json" ], 
+        "description" : "This operation executes Attendance rules for a list of employees within a date range. The Attendance Processor runs the rules and generates any resulting actions for each employee.", 
+        "operationId" : "Execute Attendance Rules for Employees", 
+        "parameters" : [ {
+          "description" : "Contains a list of employees, start date, end date, and Use Default Start Date flag.", 
+          "in" : "body", 
+          "name" : "body", 
+          "required" : true, 
+          "schema" : {
+            "$ref" : "#/definitions/ApplyRuleRequestContext"
+          }
+        } ], 
+        "produces" : [ "application/json" ], 
+        "responses" : {
+          "200" : {
+            "description" : "Success."
+          }, 
+          "400" : {
+            "description" : "<ul><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101105] - An employee ID list is required.</li><li>[WAT-101103] - End date is required.</li><li>[WAT-101104] - Start date is required.</li><li>[WAT-101002] - The date range is invalid. The start date must be on or before the end date.</li><li>[WAT-101007] - End date should be no later than today.</li><li>[WAT-100034] - A conflict occurred. The following parameters are mutually exclusive: ids, qualifiers, refs.</li><li>[WAT-101109] - Employee reference list cannot be null or empty.</li><li>[WAT-101110] - The employee parameter {parameterName} cannot be null.</li></ul>"
+          }
+        }, 
+        "summary" : "Executes rules for employees.", 
+        "tags" : [ "Rules" ]
+      }
+    }
+  }, 
+  "schemes" : null, 
+  "definitions" : {
+    "CompleteActionsRequestContext" : {
+      "description" : "The action completion request model.", 
+      "properties" : {
+        "completionDateTime" : {
+          "description" : "The date of completion for an action in ISO_LOCAL_DATE format (YYYY-MM-DD).", 
+          "type" : "string"
+        }, 
+        "dateRange" : {
+          "$ref" : "#/definitions/AttendanceDateRange", 
+          "description" : "The date range, which contains a start date, an end date, and a symbolic period. The symbolic period reference is mutually exclusive with start date and end date."
+        }, 
+        "employees" : {
+          "$ref" : "#/definitions/ObjectReferenceList", 
+          "description" : "A list of references to employee objects."
+        }, 
+        "note" : {
+          "description" : "The user note associated with an action.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "completionDateTime", "dateRange", "employees", "note" ], 
+      "type" : "object"
+    }, 
+    "AccessControlledRequestContext" : {
+      "description" : "The Attendance Request model for requests with a the manager role Boolean.", 
+      "properties" : {
+        "dateRange" : {
+          "$ref" : "#/definitions/AttendanceDateRange", 
+          "description" : "The date range, which contains a start date, an end date, and a symbolic period. The symbolic period reference is mutually exclusive with start date and end date."
+        }, 
+        "employees" : {
+          "$ref" : "#/definitions/ObjectReferenceList", 
+          "description" : "A list of references to employee objects."
+        }, 
+        "isManagerRole" : {
+          "description" : "A Boolean indicator of whether or not a user has the manager role.", 
+          "type" : "boolean"
+        }
+      }, 
+      "required" : [ "dateRange", "employees" ], 
+      "type" : "object"
+    }, 
+    "ActionDocument" : {
+      "description" : "Model for documents associated with an Action.", 
+      "properties" : {
+        "applyDateTime" : {
+          "description" : "Apply date of the action transaction.", 
+          "type" : "string"
+        }, 
+        "documents" : {
+          "description" : "Documents associated to the action transaction.", 
+          "items" : {
+            "$ref" : "#/definitions/DocumentSingleBinaryResponse"
+          }, 
+          "type" : "array"
+        }, 
+        "employee" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto", 
+          "description" : "A reference to the Employee object."
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "name" : {
+          "description" : "Name of the attendance action.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "applyDateTime", "documents", "employee", "name" ], 
+      "type" : "object"
+    }, 
+    "ActionRequestContext" : {
+      "description" : "The Action request model.", 
+      "properties" : {
+        "completed" : {
+          "description" : "A Boolean indicator of whether or not to return only completed actions.", 
+          "type" : "boolean"
+        }, 
+        "dateRange" : {
+          "$ref" : "#/definitions/AttendanceDateRange", 
+          "description" : "The date range, which contains a start date, an end date, and a symbolic period. The symbolic period reference is mutually exclusive with start date and end date."
+        }, 
+        "employees" : {
+          "$ref" : "#/definitions/ObjectReferenceList", 
+          "description" : "A list of references to employee objects."
+        }, 
+        "isManagerRole" : {
+          "description" : "A Boolean indicator of whether or not a user has the manager role.", 
+          "type" : "boolean"
+        }, 
+        "requiredOnly" : {
+          "description" : "A Boolean indicator of whether or not to return only required actions.", 
+          "type" : "boolean"
+        }
+      }, 
+      "required" : [ "dateRange", "employees" ], 
+      "type" : "object"
+    }, 
+    "Action" : {
+      "description" : "Model for Action Transaction.", 
+      "properties" : {
+        "actionStatusDateTime" : {
+          "description" : "Depending whether the action is initiated or completed, this date equals to its initiateddate/completeddate accordingly.", 
+          "type" : "string"
+        }, 
+        "balance" : {
+          "$ref" : "#/definitions/PointBalance", 
+          "description" : "Balance."
+        }, 
+        "code" : {
+          "description" : "Action code.", 
+          "type" : "string"
+        }, 
+        "completed" : {
+          "description" : "A flag that indicates whether action transaction is completed.", 
+          "type" : "boolean"
+        }, 
+        "completionDateTime" : {
+          "description" : "Action completed date and time.", 
+          "type" : "string"
+        }, 
+        "description" : {
+          "description" : "Action description.", 
+          "type" : "string"
+        }, 
+        "disciplineLevel" : {
+          "$ref" : "#/definitions/DisciplineLevel", 
+          "description" : "Discipline level."
+        }, 
+        "effectiveDateId" : {
+          "description" : "Corresponds to effective date setting for the action definition. equals to 1 if action effective date is action triggered date, equals to 2 if action effective date is action completed date.", 
+          "enum" : [ 1, 2 ], 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "employee" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto", 
+          "description" : "A reference to the Employee object."
+        }, 
+        "hasDocuments" : {
+          "description" : "Indicates whether the action has documents.", 
+          "type" : "boolean"
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "initiatedDateTime" : {
+          "description" : "Action initiated date and time.", 
+          "type" : "string"
+        }, 
+        "lastRuleEnforceDateTime" : {
+          "description" : "Last rule enforced date and time.", 
+          "type" : "string"
+        }, 
+        "name" : {
+          "description" : "The name associated with an object reference.", 
+          "type" : "string"
+        }, 
+        "perfectAttendance" : {
+          "description" : "A flag that indicates whether this action belongs to perfect attendance policy.", 
+          "type" : "boolean"
+        }, 
+        "policyDefinition" : {
+          "$ref" : "#/definitions/PolicyDefinition", 
+          "description" : "Policy definition from which this action was generated."
+        }, 
+        "processedThroughDateTime" : {
+          "description" : "Processed through date and time.", 
+          "type" : "string"
+        }, 
+        "ruleDefinition" : {
+          "$ref" : "#/definitions/RuleDefinition", 
+          "description" : "Rule definition from which this action was generated."
+        }, 
+        "status" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject", 
+          "description" : "Action status description."
+        }, 
+        "transactionId" : {
+          "description" : "Action transaction id.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "triggeredBalance" : {
+          "$ref" : "#/definitions/PointBalance", 
+          "description" : "Balance amount at the moment of action generation."
+        }, 
+        "triggeredDateTime" : {
+          "description" : "Action triggerred date and time.", 
+          "type" : "string"
+        }, 
+        "userNote" : {
+          "description" : "User note.", 
+          "type" : "string"
+        }, 
+        "versionNumber" : {
+          "description" : "Version.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }
+      }, 
+      "required" : [ "actionStatusDateTime", "balance", "code", "completed", "completionDateTime", "description", "disciplineLevel", "effectiveDateId", "employee", "hasDocuments", "initiatedDateTime", "lastRuleEnforceDateTime", "name", "perfectAttendance", "policyDefinition", "processedThroughDateTime", "ruleDefinition", "status", "transactionId", "triggeredBalance", "triggeredDateTime", "userNote", "versionNumber" ], 
+      "type" : "object"
+    }, 
+    "ActionUpdateRequestContext" : {
+      "description" : "The Update Action request model.", 
+      "properties" : {
+        "completionDateTime" : {
+          "description" : "Action completion date", 
+          "type" : "string"
+        }, 
+        "id" : {
+          "description" : "The ID of the action to be updated.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "note" : {
+          "description" : "User text note.", 
+          "type" : "string"
+        }, 
+        "versionNumber" : {
+          "description" : "Version of Action", 
+          "format" : "int64", 
+          "type" : "integer"
+        }
+      }, 
+      "required" : [ "completionDateTime", "id", "note", "versionNumber" ], 
+      "type" : "object"
+    }, 
+    "DocumentSingleBinaryResponse" : {
+      "description" : "Model for the Document resource.", 
+      "properties" : {
+        "binary" : {
+          "type" : "boolean"
+        }, 
+        "contentType" : {
+          "description" : "The content type of a binary data response.", 
+          "enum" : [ "ZIP", "XML", "XHTML", "DOC", "DOCX", "PDF", "TXT", "HTML", "HTM", "JPG", "XLS", "XLSX" ], 
+          "type" : "string"
+        }, 
+        "creationDateTime" : {
+          "description" : "The date and time a document management entity was created.", 
+          "format" : "date", 
+          "type" : "string"
+        }, 
+        "data" : {
+          "description" : "The binary data response content.", 
+          "items" : {
+            "format" : "byte", 
+            "type" : "string"
+          }, 
+          "type" : "array"
+        }, 
+        "domain" : {
+          "$ref" : "#/definitions/ObjectReference", 
+          "description" : "The domain of a document management entity."
+        }, 
+        "entityId" : {
+          "description" : "The ID of an entity associated with a document binary response.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "fileName" : {
+          "description" : "The file name of the binary data response.", 
+          "type" : "string"
+        }, 
+        "id" : {
+          "description" : "The ID of a document management entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "locale" : {
+          "$ref" : "#/definitions/LocalePolicy", 
+          "description" : "The locale of a document management entity."
+        }, 
+        "name" : {
+          "description" : "The name of a document management entity.", 
+          "type" : "string"
+        }, 
+        "size" : {
+          "description" : "The size of a document management entity.", 
+          "format" : "double", 
+          "type" : "number"
+        }, 
+        "tags" : {
+          "additionalProperties" : {
+            "type" : "object"
+          }, 
+          "description" : "The tags associated with a document binary response.", 
+          "type" : "object"
+        }
+      }, 
+      "required" : [ "contentType", "creationDateTime", "data", "domain", "entityId", "fileName", "id", "locale", "name", "size", "tags" ], 
+      "type" : "object"
+    }, 
+    "AttendanceProfile" : {
+      "description" : "Model for Attendance Profile.", 
+      "properties" : {
+        "activeSwitch" : {
+          "description" : "A Boolean indicator of whether or not an attendance profile is active.", 
+          "type" : "boolean"
+        }, 
+        "description" : {
+          "description" : "The description of an attendance profile.", 
+          "type" : "string"
+        }, 
+        "id" : {
+          "description" : "The ID of an attendance profile.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "name" : {
+          "description" : "The name of an attendance profile.", 
+          "type" : "string"
+        }, 
+        "persistentId" : {
+          "description" : "The persistent ID of an attendance profile.", 
+          "type" : "string"
+        }, 
+        "versions" : {
+          "description" : "A list of the profile policies associated with each attendance profile.", 
+          "items" : {
+            "$ref" : "#/definitions/ProfilePolicyAssignmentDTOList"
+          }, 
+          "type" : "array"
+        }
+      }, 
+      "required" : [ "activeSwitch", "description", "id", "name", "persistentId", "versions" ], 
+      "type" : "object"
+    }, 
+    "Multi Read Request for attendance Profiles" : {
+      "description" : "The Retrieve Employee Groups request payload's where model.", 
+      "properties" : {
+        "where" : {
+          "$ref" : "#/definitions/Multi Read Criteria to fetch attendance profile.", 
+          "description" : "The where model of an employee group in which the actual criteria for retrieving employee groups is specified."
+        }
+      }, 
+      "type" : "object"
+    }, 
+    "AttendanceAuditDataRequestContext" : {
+      "description" : "The audit records common data model.", 
+      "properties" : {
+        "dateRange" : {
+          "$ref" : "#/definitions/AttendanceDateRange", 
+          "description" : "The date range, which contains a start date, an end date, and a symbolic period. The symbolic period reference is mutually exclusive with start date and end date."
+        }, 
+        "employees" : {
+          "$ref" : "#/definitions/ObjectReferenceList", 
+          "description" : "A list of references to employee objects."
+        }, 
+        "entityTypes" : {
+          "description" : "Case insensitive auditing entity types.", 
+          "items" : {
+            "type" : "string"
+          }, 
+          "type" : "array"
+        }
+      }, 
+      "required" : [ "dateRange", "employees" ], 
+      "type" : "object"
+    }, 
+    "AttendanceAuditData" : {
+      "description" : "The audit records common data model.", 
+      "properties" : {
+        "entityType" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject", 
+          "description" : "The type of an audited entity.", 
+          "readOnly" : true
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "type" : "string"
+        }, 
+        "revisionDate" : {
+          "description" : "The date and time of changes", 
+          "readOnly" : true, 
+          "type" : "string"
+        }, 
+        "revisionInfo" : {
+          "description" : "revision unique identifier", 
+          "format" : "int64", 
+          "readOnly" : true, 
+          "type" : "integer"
+        }, 
+        "revisionType" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject", 
+          "description" : "type of change: create, update, delete", 
+          "readOnly" : true
+        }, 
+        "user" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto", 
+          "description" : "user who made changes", 
+          "readOnly" : true
+        }
+      }, 
+      "type" : "object"
+    }, 
+    "UpdateBalanceRequestContext" : {
+      "description" : "The Balance Update request model.", 
+      "properties" : {
+        "amount" : {
+          "description" : "The balance amount to update.", 
+          "type" : "number"
+        }, 
+        "balanceDefinition" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto", 
+          "description" : "A reference to a balance definition object."
+        }, 
+        "employees" : {
+          "$ref" : "#/definitions/ObjectReferenceList", 
+          "description" : "A list of references to employee objects."
+        }, 
+        "isManagerRole" : {
+          "description" : "A Boolean indicator of whether or not a user has the manager role.", 
+          "type" : "boolean"
+        }, 
+        "updateDateTime" : {
+          "description" : "The date and time of a balance update in ISO_LOCAL_DATE_TIME format (yyyy-mm-ddThh:mm:ss.sss).", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "amount", "balanceDefinition", "employees", "updateDateTime" ], 
+      "type" : "object"
+    }, 
+    "PointTransaction" : {
+      "description" : "Model for Point Transaction.", 
+      "properties" : {
+        "applyDateTime" : {
+          "description" : "Apply date and time of point transaction.", 
+          "type" : "string"
+        }, 
+        "balanceChange" : {
+          "description" : "Balance change amount.", 
+          "format" : "double", 
+          "type" : "number"
+        }, 
+        "decimalPlaceNum" : {
+          "description" : "Number of decimal places.", 
+          "type" : "number"
+        }, 
+        "employee" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto", 
+          "description" : "A reference to the Employee object."
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "name" : {
+          "description" : "The name associated with an object reference.", 
+          "type" : "string"
+        }, 
+        "type" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject", 
+          "description" : "A localized reference to the type object."
+        }
+      }, 
+      "required" : [ "applyDateTime", "balanceChange", "employee", "name", "type" ], 
+      "type" : "object"
+    }, 
+    "GetBalancesRequestContext" : {
+      "description" : "The Retrieve Balance Resets and Adjustments request model.", 
+      "properties" : {
+        "balanceTypes" : {
+          "description" : "A list of balance type categories for filtering.", 
+          "items" : {
+            "type" : "string"
+          }, 
+          "type" : "array"
+        }, 
+        "dateRange" : {
+          "$ref" : "#/definitions/AttendanceDateRange", 
+          "description" : "The date range, which contains a start date, an end date, and a symbolic period. The symbolic period reference is mutually exclusive with start date and end date."
+        }, 
+        "employees" : {
+          "$ref" : "#/definitions/ObjectReferenceList", 
+          "description" : "A list of references to employee objects."
+        }, 
+        "isManagerRole" : {
+          "description" : "A Boolean indicator of whether or not a user has the manager role.", 
+          "type" : "boolean"
+        }
+      }, 
+      "required" : [ "dateRange", "employees" ], 
+      "type" : "object"
+    }, 
+    "BalanceAdjustment_DomainService" : {
+      "description" : "Model for Balance Adjustment.", 
+      "properties" : {
+        "applyDateTime" : {
+          "description" : "Apply date and time of point transaction.", 
+          "type" : "string"
+        }, 
+        "balanceChange" : {
+          "description" : "Balance change amount.", 
+          "format" : "double", 
+          "type" : "number"
+        }, 
+        "decimalPlaceNum" : {
+          "description" : "Number of decimal places.", 
+          "type" : "number"
+        }, 
+        "employee" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto_DomainService", 
+          "description" : "A reference to the Employee object."
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "name" : {
+          "description" : "The name associated with an object reference.", 
+          "type" : "string"
+        }, 
+        "pointBalanceType" : {
+          "$ref" : "#/definitions/PointBalanceType_DomainService", 
+          "description" : "Point balance type."
+        }, 
+        "policyDefinition" : {
+          "$ref" : "#/definitions/PolicyDefinition_DomainService", 
+          "description" : "Policy definition from which this balance adjustment was generated."
+        }, 
+        "ruleDefinition" : {
+          "$ref" : "#/definitions/RuleDefinition_DomainService", 
+          "description" : "Attendance rule from which this balance adjustment was generated."
+        }, 
+        "type" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject_DomainService", 
+          "description" : "A localized reference to the type object."
+        }, 
+        "updatedByUser" : {
+          "description" : "The ID of the user who performed this balance adjustment.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }
+      }, 
+      "required" : [ "applyDateTime", "balanceChange", "employee", "name", "pointBalanceType", "policyDefinition", "ruleDefinition", "type", "updatedByUser" ], 
+      "type" : "object"
+    }, 
+    "AttendanceExpiringBalance_DomainService" : {
+      "description" : "Model for Balance Expiration.", 
+      "properties" : {
+        "awardDateTime" : {
+          "description" : "The date and time on which expired event was generated.", 
+          "type" : "string"
+        }, 
+        "balanceChange" : {
+          "description" : "Balance change amount.", 
+          "format" : "double", 
+          "type" : "number"
+        }, 
+        "employee" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto_DomainService", 
+          "description" : "A reference to the Employee object."
+        }, 
+        "expirationDateTime" : {
+          "description" : "The date and time of when this balance is going to be expired.", 
+          "type" : "string"
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "name" : {
+          "description" : "The name associated with an object reference.", 
+          "type" : "string"
+        }, 
+        "pointBalanceType" : {
+          "$ref" : "#/definitions/PointBalanceType_DomainService", 
+          "description" : "Balance type of this expiring balance."
+        }, 
+        "policyDefinition" : {
+          "$ref" : "#/definitions/PolicyDefinition_DomainService", 
+          "description" : "Attendance policy from which this expiring balance was generated."
+        }, 
+        "resetDateTime" : {
+          "description" : "The date and time of reset that leaded to the balance not being changed by expiration.", 
+          "type" : "string"
+        }, 
+        "type" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject_DomainService", 
+          "description" : "A localized reference to the type object."
+        }
+      }, 
+      "required" : [ "awardDateTime", "balanceChange", "employee", "expirationDateTime", "name", "pointBalanceType", "policyDefinition", "resetDateTime", "type" ], 
+      "type" : "object"
+    }, 
+    "ResetBalanceRequestContext" : {
+      "description" : "The request payload model for a balance reset.", 
+      "properties" : {
+        "amount" : {
+          "description" : "The reset amount of a balance reset.", 
+          "type" : "number"
+        }, 
+        "balanceDefinition" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto", 
+          "description" : "A reference to a balance definition object."
+        }, 
+        "dateRange" : {
+          "$ref" : "#/definitions/AttendanceDateRange", 
+          "description" : "The date range, which contains a start date, an end date, and a symbolic period. The symbolic period reference is mutually exclusive with start date and end date."
+        }, 
+        "employees" : {
+          "$ref" : "#/definitions/ObjectReferenceList", 
+          "description" : "A list of references to employee objects."
+        }, 
+        "isManagerRole" : {
+          "description" : "A Boolean indicator of whether or not a user has the manager role.", 
+          "type" : "boolean"
+        }, 
+        "resetDateTime" : {
+          "description" : "The date and time of a balance reset in ISO_LOCAL_DATE_TIME format (yyyy-mm-ddThh:mm:ss.sss).", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "amount", "balanceDefinition", "dateRange", "employees", "resetDateTime" ], 
+      "type" : "object"
+    }, 
+    "PointBalance" : {
+      "description" : "Model for Point Balance.", 
+      "properties" : {
+        "balanceAmount" : {
+          "description" : "Balance amount.", 
+          "format" : "double", 
+          "type" : "number"
+        }, 
+        "decimalPlaceNum" : {
+          "description" : "Number of decimal places.", 
+          "type" : "number"
+        }, 
+        "employee" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto", 
+          "description" : "A reference to the Employee object."
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "name" : {
+          "description" : "The name associated with an object reference.", 
+          "type" : "string"
+        }, 
+        "startDateTime" : {
+          "description" : "The start date and time of this balance.", 
+          "type" : "string"
+        }, 
+        "type" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject", 
+          "description" : "A localized reference to the type object."
+        }
+      }, 
+      "required" : [ "balanceAmount", "employee", "name", "startDateTime", "type" ], 
+      "type" : "object"
+    }, 
+    "BalanceReset" : {
+      "description" : "Model for Balance Reset.", 
+      "properties" : {
+        "balanceAmount" : {
+          "description" : "Balance amount.", 
+          "format" : "double", 
+          "type" : "number"
+        }, 
+        "decimalPlaceNum" : {
+          "description" : "Number of decimal places.", 
+          "type" : "number"
+        }, 
+        "employee" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto", 
+          "description" : "A reference to the Employee object."
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "name" : {
+          "description" : "The name associated with an object reference.", 
+          "type" : "string"
+        }, 
+        "pointBalanceType" : {
+          "$ref" : "#/definitions/PointBalanceType", 
+          "description" : "Point balance type."
+        }, 
+        "policyDefinition" : {
+          "$ref" : "#/definitions/PolicyDefinition", 
+          "description" : "Attendance policy from which this balance reset was generated."
+        }, 
+        "ruleDefinition" : {
+          "$ref" : "#/definitions/RuleDefinition", 
+          "description" : "Attendance rule from which this balance reset was generated."
+        }, 
+        "startDateTime" : {
+          "description" : "The start date and time of this balance.", 
+          "type" : "string"
+        }, 
+        "type" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject", 
+          "description" : "A localized reference to the type object."
+        }, 
+        "updatedByUser" : {
+          "description" : "The ID of the user who performed the reset.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }
+      }, 
+      "required" : [ "balanceAmount", "employee", "name", "pointBalanceType", "policyDefinition", "ruleDefinition", "startDateTime", "type", "updatedByUser" ], 
+      "type" : "object"
+    }, 
+    "DayBalance" : {
+      "description" : "Model for Day Balance.", 
+      "properties" : {
+        "dateTime" : {
+          "description" : "The date and time associated with a balance.", 
+          "type" : "string"
+        }, 
+        "employee" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto", 
+          "description" : "A reference to the Employee object."
+        }, 
+        "endBalanceAmount" : {
+          "description" : "The ending balance amount.", 
+          "format" : "double", 
+          "type" : "number"
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "isChanged" : {
+          "description" : "A Boolean indicator of whether or not a change in points occurred for this balance transaction.", 
+          "type" : "boolean"
+        }, 
+        "name" : {
+          "description" : "The name associated with an object reference.", 
+          "type" : "string"
+        }, 
+        "pointBalanceType" : {
+          "$ref" : "#/definitions/PointBalanceType", 
+          "description" : "The balance type."
+        }, 
+        "startBalanceAmount" : {
+          "description" : "The starting balance amount.", 
+          "format" : "double", 
+          "type" : "number"
+        }, 
+        "type" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject", 
+          "description" : "A localized reference to the type object."
+        }
+      }, 
+      "required" : [ "dateTime", "employee", "endBalanceAmount", "isChanged", "name", "pointBalanceType", "startBalanceAmount", "type" ], 
+      "type" : "object"
+    }, 
+    "DisciplineLevelTransactionRequestContext" : {
+      "description" : "The Discipline Level Transaction request model.", 
+      "properties" : {
+        "dateRange" : {
+          "$ref" : "#/definitions/AttendanceDateRange", 
+          "description" : "The date range, which contains a start date, an end date, and a symbolic period. The symbolic period reference is mutually exclusive with start date and end date."
+        }, 
+        "employees" : {
+          "$ref" : "#/definitions/ObjectReferenceList", 
+          "description" : "A list of references to employee objects."
+        }, 
+        "includeDailyDiscLevels" : {
+          "description" : "A Boolean indicator of whether or not to return only discipline level changes. If false, all the dates within the specified date range with corresponding discipline levels on every day are returned.", 
+          "type" : "boolean"
+        }, 
+        "isManagerRole" : {
+          "description" : "A Boolean indicator of whether or not a user has the manager role.", 
+          "type" : "boolean"
+        }
+      }, 
+      "required" : [ "dateRange", "employees" ], 
+      "type" : "object"
+    }, 
+    "DisciplineLevelTransaction" : {
+      "description" : "Model for Discipline Level Transaction.", 
+      "properties" : {
+        "balance" : {
+          "$ref" : "#/definitions/PointBalance", 
+          "description" : "Point balance information."
+        }, 
+        "dateTime" : {
+          "description" : "The date and time of discipline level change or daily discipline level.", 
+          "type" : "string"
+        }, 
+        "discipline" : {
+          "$ref" : "#/definitions/DisciplineLevel", 
+          "description" : "Referance to Discipline level object."
+        }, 
+        "employee" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto", 
+          "description" : "A reference to the Employee object."
+        }, 
+        "endDateTime" : {
+          "description" : "The end date and time of discipline level.", 
+          "type" : "string"
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "policy" : {
+          "$ref" : "#/definitions/PolicyDefinition", 
+          "description" : "Referance to Policy definition object."
+        }, 
+        "profile" : {
+          "$ref" : "#/definitions/ProfileDefinition", 
+          "description" : "Referance to Attendance Profile object."
+        }, 
+        "rule" : {
+          "$ref" : "#/definitions/RuleDefinition", 
+          "description" : "Referance to Rule definition object."
+        }, 
+        "startDateTime" : {
+          "description" : "The start date and time of discipline level.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "balance", "dateTime", "discipline", "employee", "endDateTime", "policy", "profile", "rule", "startDateTime" ], 
+      "type" : "object"
+    }, 
+    "AttenandaceEvent_DomainService" : {
+      "description" : "Model for event publish history search response.", 
+      "properties" : {
+        "amount" : {
+          "description" : "The amount in seconds.", 
+          "type" : "number"
+        }, 
+        "applyDate" : {
+          "description" : "Date when event was generated.", 
+          "format" : "date", 
+          "type" : "string"
+        }, 
+        "dayAmount" : {
+          "description" : "The amount in days.", 
+          "type" : "number"
+        }, 
+        "employee" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto_DomainService", 
+          "description" : "A reference to the Employee object."
+        }, 
+        "employeeCurrency" : {
+          "description" : "Currency code of event's employee.", 
+          "readOnly" : true, 
+          "type" : "string"
+        }, 
+        "eventDefinition" : {
+          "$ref" : "#/definitions/EventDefinition_DomainService", 
+          "description" : "Event definition."
+        }, 
+        "eventTime" : {
+          "description" : "Time when event was generated.", 
+          "type" : "string"
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "isSystem" : {
+          "description" : "A flag that indicates whether this event is a system generated one.", 
+          "type" : "boolean"
+        }, 
+        "name" : {
+          "description" : "The name associated with an object reference.", 
+          "type" : "string"
+        }, 
+        "pointTransaction" : {
+          "$ref" : "#/definitions/PointTransaction_DomainService", 
+          "description" : "point transaction that contains information of balance changes for this event."
+        }, 
+        "policyDefinition" : {
+          "$ref" : "#/definitions/PolicyDefinition_DomainService", 
+          "description" : "Attendance policy definition."
+        }, 
+        "ruleDefinition" : {
+          "$ref" : "#/definitions/RuleDefinition_DomainService", 
+          "description" : "Attendance rule definition."
+        }, 
+        "timeZoneId" : {
+          "description" : "Time zone identifier.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "type" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject_DomainService", 
+          "description" : "A localized reference to the type object."
+        }, 
+        "updatedByUserId" : {
+          "description" : "The ID of user who updated the event.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "userCurrency" : {
+          "description" : "Currency code of logged in user.", 
+          "readOnly" : true, 
+          "type" : "string"
+        }, 
+        "wageLiability" : {
+          "description" : "Wage liability amount calculated based on TimeKeeping Wage Rate.", 
+          "format" : "double", 
+          "readOnly" : true, 
+          "type" : "number"
+        }
+      }, 
+      "required" : [ "amount", "applyDate", "dayAmount", "employee", "eventDefinition", "eventTime", "isSystem", "name", "pointTransaction", "policyDefinition", "ruleDefinition", "timeZoneId", "type", "updatedByUserId" ], 
+      "type" : "object"
+    }, 
+    "AttenandaceEvent" : {
+      "description" : "Model for event publish history search response.", 
+      "properties" : {
+        "amount" : {
+          "description" : "The amount in seconds.", 
+          "type" : "number"
+        }, 
+        "applyDate" : {
+          "description" : "Date when event was generated.", 
+          "format" : "date", 
+          "type" : "string"
+        }, 
+        "dayAmount" : {
+          "description" : "The amount in days.", 
+          "type" : "number"
+        }, 
+        "employee" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto", 
+          "description" : "A reference to the Employee object."
+        }, 
+        "employeeCurrency" : {
+          "description" : "Currency code of event's employee.", 
+          "readOnly" : true, 
+          "type" : "string"
+        }, 
+        "eventDefinition" : {
+          "$ref" : "#/definitions/EventDefinition", 
+          "description" : "Event definition."
+        }, 
+        "eventTime" : {
+          "description" : "Time when event was generated.", 
+          "type" : "string"
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "incidentDate" : {
+          "description" : "Included only for incident requests, equals to apply date.", 
+          "format" : "date", 
+          "readOnly" : true, 
+          "type" : "string"
+        }, 
+        "incidentType" : {
+          "description" : "Included only for incident requests, has EVENT value for a such dto type.", 
+          "enum" : [ "EVENT", "EXPIRING_POINT", "BALANCE_UPDATE" ], 
+          "readOnly" : true, 
+          "type" : "string"
+        }, 
+        "isSystem" : {
+          "description" : "A flag that indicates whether this event is a system generated one.", 
+          "type" : "boolean"
+        }, 
+        "name" : {
+          "description" : "The name associated with an object reference.", 
+          "type" : "string"
+        }, 
+        "pointTransaction" : {
+          "$ref" : "#/definitions/PointTransaction", 
+          "description" : "point transaction that contains information of balance changes for this event."
+        }, 
+        "policyDefinition" : {
+          "$ref" : "#/definitions/PolicyDefinition", 
+          "description" : "Attendance policy definition."
+        }, 
+        "ruleDefinition" : {
+          "$ref" : "#/definitions/RuleDefinition", 
+          "description" : "Attendance rule definition."
+        }, 
+        "timeZoneId" : {
+          "description" : "Time zone identifier.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "type" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject", 
+          "description" : "A localized reference to the type object."
+        }, 
+        "updatedByUserId" : {
+          "description" : "The ID of user who updated the event.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "userCurrency" : {
+          "description" : "Currency code of logged in user.", 
+          "readOnly" : true, 
+          "type" : "string"
+        }, 
+        "wageLiability" : {
+          "description" : "Wage liability amount calculated based on TimeKeeping Wage Rate.", 
+          "format" : "double", 
+          "readOnly" : true, 
+          "type" : "number"
+        }
+      }, 
+      "required" : [ "amount", "applyDate", "dayAmount", "employee", "eventDefinition", "eventTime", "isSystem", "name", "pointTransaction", "policyDefinition", "ruleDefinition", "timeZoneId", "type", "updatedByUserId" ], 
+      "type" : "object"
+    }, 
+    "EventRequestContext" : {
+      "description" : "The Event request model.", 
+      "properties" : {
+        "actionId" : {
+          "description" : "The ID of an action.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "dateRange" : {
+          "$ref" : "#/definitions/AttendanceDateRange", 
+          "description" : "The date range, which contains a start date, an end date, and a symbolic period. The symbolic period reference is mutually exclusive with start date and end date."
+        }, 
+        "employeeId" : {
+          "description" : "A reference to the employee object.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "employees" : {
+          "$ref" : "#/definitions/ObjectReferenceList", 
+          "description" : "A list of references to employee objects."
+        }, 
+        "eventTypes" : {
+          "items" : {
+            "type" : "string"
+          }, 
+          "type" : "array"
+        }, 
+        "excludeInconsequentialEvents" : {
+          "description" : "A Boolean indicator of whether or not to exclude inconsequential events. When false, returns all events regardless of whether not not they have consequences.", 
+          "type" : "boolean"
+        }, 
+        "isManagerRole" : {
+          "description" : "A Boolean indicator of whether or not a user has the manager role.", 
+          "type" : "boolean"
+        }, 
+        "wageLiabilityCalculated" : {
+          "description" : "A Boolean indicator of whether or not the Wage Liability attribute is calculated and included in the response.", 
+          "type" : "boolean"
+        }
+      }, 
+      "required" : [ "actionId", "dateRange", "employeeId", "employees" ], 
+      "type" : "object"
+    }, 
+    "EventGroup" : {
+      "description" : "Model for Event Group.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "UpsertDateMarkerRequestContext" : {
+      "description" : "Create or Update Ignore History Marker and Ignore Timecard Marker request model.", 
+      "properties" : {
+        "dateTime" : {
+          "description" : "The date in ISO_LOCAL_DATE format (YYYY-MM-DD).", 
+          "type" : "string"
+        }, 
+        "employees" : {
+          "$ref" : "#/definitions/ObjectReferenceList", 
+          "description" : "An array of employees."
+        }, 
+        "markerType" : {
+          "description" : "The type of marker involved in the operation. Possible values are \"HISTORY\" or \"TIMECARD\".", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "dateTime", "employees", "markerType" ], 
+      "type" : "object"
+    }, 
+    "EmployeeProcInfo" : {
+      "description" : "Model for EmployeeProcInfo.", 
+      "properties" : {
+        "amnestyMarkerDateTime" : {
+          "description" : "ignore history marker.", 
+          "type" : "string"
+        }, 
+        "employee" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto", 
+          "description" : "employee."
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "procStartDateTime" : {
+          "description" : "date&time from which rules were applied.", 
+          "type" : "string"
+        }, 
+        "procThroughDateTime" : {
+          "description" : "date&time to which rules were applied.", 
+          "type" : "string"
+        }, 
+        "startupDateTime" : {
+          "description" : "ignore timecard marker.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "amnestyMarkerDateTime", "employee", "procStartDateTime", "procThroughDateTime", "startupDateTime" ], 
+      "type" : "object"
+    }, 
+    "DeleteDateMarkerRequestContext" : {
+      "description" : "The Delete Ignore History Marker and Ignore Timecard Marker request model.", 
+      "properties" : {
+        "employees" : {
+          "$ref" : "#/definitions/ObjectReferenceList", 
+          "description" : "An array of employees."
+        }, 
+        "markerType" : {
+          "description" : "The type of marker involved in the operation. Possible values are \"HISTORY\" or \"TIMECARD\".", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "employees", "markerType" ], 
+      "type" : "object"
+    }, 
+    "PerfectAttendance" : {
+      "description" : "Model for Perfect Attendance.", 
+      "properties" : {
+        "applyDateTime" : {
+          "description" : "Apply date and time of a perfect attendance transaction.", 
+          "type" : "string"
+        }, 
+        "employee" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto", 
+          "description" : "A reference to the Employee object."
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "name" : {
+          "description" : "The name associated with an object reference.", 
+          "type" : "string"
+        }, 
+        "perfectAttendanceDefinition" : {
+          "$ref" : "#/definitions/PerfectAttendanceDefinition", 
+          "description" : "The perfect attendance definition associated with a perfect attendance transaction."
+        }, 
+        "pointTransaction" : {
+          "$ref" : "#/definitions/PointTransaction", 
+          "description" : "The point transaction associated with a perfect attendance transaction."
+        }, 
+        "policyDefinition" : {
+          "$ref" : "#/definitions/PolicyDefinition", 
+          "description" : "The policy definition associated with a perfect attendance transaction."
+        }, 
+        "type" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject", 
+          "description" : "A localized reference to the type object."
+        }
+      }, 
+      "required" : [ "applyDateTime", "employee", "name", "perfectAttendanceDefinition", "pointTransaction", "policyDefinition", "type" ], 
+      "type" : "object"
+    }, 
+    "PerfectAttendanceDeduction" : {
+      "description" : "Model for Perfect Attendance Deduction.", 
+      "properties" : {
+        "balanceChange" : {
+          "description" : "Balance change amount.", 
+          "format" : "double", 
+          "type" : "number"
+        }, 
+        "deductionDateTime" : {
+          "description" : "date&time of pa deduction's generation .", 
+          "type" : "string"
+        }, 
+        "employee" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto", 
+          "description" : "A reference to the Employee object."
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "name" : {
+          "description" : "The name associated with an object reference.", 
+          "type" : "string"
+        }, 
+        "perfectAttendanceDateTime" : {
+          "description" : "date&time of pa award's generation .", 
+          "type" : "string"
+        }, 
+        "pointBalanceType" : {
+          "$ref" : "#/definitions/PointBalanceType", 
+          "description" : "point balance type."
+        }, 
+        "policyDefinition" : {
+          "$ref" : "#/definitions/PolicyDefinition", 
+          "description" : "policy definition from which pa deduction was generated ."
+        }, 
+        "type" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject", 
+          "description" : "A localized reference to the type object."
+        }
+      }, 
+      "required" : [ "balanceChange", "deductionDateTime", "employee", "name", "perfectAttendanceDateTime", "pointBalanceType", "policyDefinition", "type" ], 
+      "type" : "object"
+    }, 
+    "ProcessorRequest" : {
+      "description" : "Model for Processor Request.", 
+      "properties" : {
+        "daysToTruncate" : {
+          "description" : "number of days to truncate for end date calculation.", 
+          "format" : "int32", 
+          "type" : "integer"
+        }, 
+        "description" : {
+          "description" : "description of processor request.", 
+          "type" : "string"
+        }, 
+        "hyperfindQuery" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto", 
+          "description" : "hyperfind query."
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "name" : {
+          "description" : "The name associated with an object reference.", 
+          "type" : "string"
+        }, 
+        "nextRun" : {
+          "description" : "next attendance processor run info", 
+          "type" : "string"
+        }, 
+        "scheduledByUserId" : {
+          "description" : "The ID of user by which the event is being scheduled.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "scheduledForUserId" : {
+          "description" : "The ID of user for which the event is being scheduled", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "schedulingInfo" : {
+          "$ref" : "#/definitions/SchedulingEventDetails", 
+          "description" : "scheduling details."
+        }
+      }, 
+      "required" : [ "daysToTruncate", "hyperfindQuery", "name", "schedulingInfo" ], 
+      "type" : "object"
+    }, 
+    "ProfileAssignment" : {
+      "description" : "Model for Profile Assignment.", 
+      "properties" : {
+        "dateTime" : {
+          "description" : "date&time of profile assignment.", 
+          "type" : "string"
+        }, 
+        "employee" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto", 
+          "description" : "employee for whom profile was assigned to."
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "profileDefinition" : {
+          "$ref" : "#/definitions/ProfileDefinition", 
+          "description" : "profile definition of employee."
+        }, 
+        "type" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject", 
+          "description" : "type of profile assignment : assignment or effective version"
+        }
+      }, 
+      "required" : [ "dateTime", "employee", "profileDefinition", "type" ], 
+      "type" : "object"
+    }, 
+    "ApplyRuleRequestContext" : {
+      "description" : "The Apply Rules request model.", 
+      "properties" : {
+        "employees" : {
+          "$ref" : "#/definitions/ObjectReferenceList", 
+          "description" : "A list of references to employee objects."
+        }, 
+        "endDate" : {
+          "description" : "The end date of a date range in ISO_LOCAL_DATE format (YYYY-MM-DD).", 
+          "type" : "string"
+        }, 
+        "startDate" : {
+          "description" : "The start date of a date range in ISO_LOCAL_DATE format (YYYY-MM-DD).", 
+          "type" : "string"
+        }, 
+        "useDefaultStartDate" : {
+          "description" : "A Boolean indicator of whether or not to use the default start date.", 
+          "type" : "boolean"
+        }
+      }, 
+      "required" : [ "employees", "endDate", "startDate" ], 
+      "type" : "object"
+    }, 
+    "AttendanceDateRange" : {
+      "description" : "The date range with symbolic period model.", 
+      "properties" : {
+        "endDate" : {
+          "description" : "The end date of a date range in ISO_LOCAL_DATE format (YYYY-MM-DD).", 
+          "type" : "string"
+        }, 
+        "startDate" : {
+          "description" : "The start date of a date range in ISO_LOCAL_DATE format (YYYY-MM-DD).", 
+          "type" : "string"
+        }, 
+        "symbolicPeriod" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto", 
+          "description" : "A reference to a symbolic period object."
+        }
+      }, 
+      "required" : [ "endDate", "startDate", "symbolicPeriod" ], 
+      "type" : "object"
+    }, 
+    "ObjectReferenceList" : {
+      "description" : "A list of object reference objects.", 
+      "properties" : {
+        "ids" : {
+          "description" : "A list of IDs.", 
+          "items" : {
+            "format" : "int64", 
+            "type" : "integer"
+          }, 
+          "type" : "array"
+        }, 
+        "qualifiers" : {
+          "description" : "A list of qualifiers.", 
+          "items" : {
+            "type" : "string"
+          }, 
+          "type" : "array"
+        }, 
+        "refs" : {
+          "description" : "A list of reference objects. Reference objects contain ID and qualifier.", 
+          "items" : {
+            "$ref" : "#/definitions/AttendanceObjectReferenceDto"
+          }, 
+          "type" : "array"
+        }
+      }, 
+      "required" : [ "ids", "qualifiers", "refs" ], 
+      "type" : "object"
+    }, 
+    "AttendanceObjectReferenceDto" : {
+      "description" : "The leave object reference model.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "DisciplineLevel" : {
+      "description" : "Model for Discipline Level.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "PolicyDefinition" : {
+      "description" : "Model for Policy Definition.", 
+      "properties" : {
+        "detailLabel" : {
+          "description" : "Attendance policy definition name.", 
+          "type" : "string"
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "detailLabel", "qualifier" ], 
+      "type" : "object"
+    }, 
+    "RuleDefinition" : {
+      "description" : "Model for Rule Definition.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "AttendanceLocalizedObject" : {
+      "description" : "Model for Localized Object.", 
+      "properties" : {
+        "displayName" : {
+          "description" : "Name (Localized field).", 
+          "type" : "string"
+        }, 
+        "name" : {
+          "description" : "Name (Non localized field).", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "displayName", "name" ], 
+      "type" : "object"
+    }, 
+    "ObjectReference" : {
+      "description" : "Model for object reference.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of an object reference.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "name" : {
+          "description" : "The name of an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "id", "name" ], 
+      "type" : "object"
+    }, 
+    "LocalePolicy" : {
+      "description" : "Model for Locale Policy.", 
+      "properties" : {
+        "countryCode" : {
+          "description" : "The country code of a locale policy.", 
+          "type" : "string"
+        }, 
+        "description" : {
+          "description" : "The description of a locale policy.", 
+          "type" : "string"
+        }, 
+        "displayName" : {
+          "description" : "The display name of a locale policy.", 
+          "type" : "string"
+        }, 
+        "id" : {
+          "description" : "The ID of a locale policy.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "languageCode" : {
+          "description" : "The language code of a locale policy.", 
+          "type" : "string"
+        }, 
+        "name" : {
+          "description" : "The name of a locale policy.", 
+          "type" : "string"
+        }, 
+        "tenantDefault" : {
+          "description" : "A Boolean indicator of whether or not a given locale policy is the default locale policy for a tenant.", 
+          "type" : "boolean"
+        }
+      }, 
+      "required" : [ "countryCode", "description", "displayName", "id", "languageCode", "name", "tenantDefault" ], 
+      "type" : "object"
+    }, 
+    "ProfilePolicyAssignmentDTOList" : {
+      "description" : "The profile policy assignment array model.", 
+      "properties" : {
+        "effectiveDate" : {
+          "description" : "The effective date of a profile policy assignment in ISO_LOCAL_DATE format (YYYY-MM-DD).", 
+          "format" : "date", 
+          "type" : "string"
+        }, 
+        "expirationDate" : {
+          "description" : "The expiration date of a profile policy assignment in ISO_LOCAL_DATE format (YYYY-MM-DD).", 
+          "format" : "date", 
+          "type" : "string"
+        }, 
+        "profilePolicyAssignments" : {
+          "description" : "An array of profile policy assignments.", 
+          "items" : {
+            "$ref" : "#/definitions/ProfilePolicyAssignmentDTO"
+          }, 
+          "type" : "array"
+        }
+      }, 
+      "type" : "object"
+    }, 
+    "Multi Read Criteria to fetch attendance profile." : {
+      "description" : "The Retrieve Employee Groups request payload model.", 
+      "properties" : {
+        "allDetails" : {
+          "description" : "A Boolean indicator of whether or not the response returns all of the details of each Hyperfind query.", 
+          "type" : "boolean"
+        }, 
+        "attendanceProfiles" : {
+          "$ref" : "#/definitions/Multi Read References which contains actual criterias", 
+          "description" : "An array of references to attendance profiles."
+        }
+      }, 
+      "type" : "object"
+    }, 
+    "AttendanceObjectReferenceDto_DomainService" : {
+      "description" : "The leave object reference model.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "PointBalanceType_DomainService" : {
+      "description" : "Model for Point Balance.", 
+      "properties" : {
+        "decimalPlaceNum" : {
+          "description" : "Number of decimal places.", 
+          "type" : "number"
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "maxBalanceAmount" : {
+          "description" : "Maximum balance amount an employee can have.", 
+          "type" : "number"
+        }, 
+        "minBalanceAmount" : {
+          "description" : "Minimum balance amount an employee can have.", 
+          "type" : "number"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }, 
+        "startingBalanceAmount" : {
+          "description" : "Starting balance amount for the specified point type.", 
+          "type" : "number"
+        }, 
+        "type" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject_DomainService", 
+          "description" : "Type."
+        }
+      }, 
+      "required" : [ "decimalPlaceNum", "maxBalanceAmount", "minBalanceAmount", "qualifier", "startingBalanceAmount", "type" ], 
+      "type" : "object"
+    }, 
+    "PolicyDefinition_DomainService" : {
+      "description" : "Model for Policy Definition.", 
+      "properties" : {
+        "detailLabel" : {
+          "description" : "Attendance policy definition name.", 
+          "type" : "string"
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "detailLabel", "qualifier" ], 
+      "type" : "object"
+    }, 
+    "RuleDefinition_DomainService" : {
+      "description" : "Model for Rule Definition.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "AttendanceLocalizedObject_DomainService" : {
+      "description" : "Model for Localized Object.", 
+      "properties" : {
+        "displayName" : {
+          "description" : "Name (Localized field).", 
+          "type" : "string"
+        }, 
+        "name" : {
+          "description" : "Name (Non localized field).", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "displayName", "name" ], 
+      "type" : "object"
+    }, 
+    "PointBalanceType" : {
+      "description" : "Model for Point Balance.", 
+      "properties" : {
+        "decimalPlaceNum" : {
+          "description" : "Number of decimal places.", 
+          "type" : "number"
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "maxBalanceAmount" : {
+          "description" : "Maximum balance amount an employee can have.", 
+          "type" : "number"
+        }, 
+        "minBalanceAmount" : {
+          "description" : "Minimum balance amount an employee can have.", 
+          "type" : "number"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }, 
+        "startingBalanceAmount" : {
+          "description" : "Starting balance amount for the specified point type.", 
+          "type" : "number"
+        }, 
+        "type" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject", 
+          "description" : "Type."
+        }
+      }, 
+      "required" : [ "decimalPlaceNum", "maxBalanceAmount", "minBalanceAmount", "qualifier", "startingBalanceAmount", "type" ], 
+      "type" : "object"
+    }, 
+    "ProfileDefinition" : {
+      "description" : "Model for Profile Definition.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "EventDefinition_DomainService" : {
+      "description" : "Model for Event Definition.", 
+      "properties" : {
+        "active" : {
+          "description" : "A Boolean indicator of whether or not an event definition is active.", 
+          "type" : "boolean"
+        }, 
+        "amountUnit" : {
+          "$ref" : "#/definitions/AmountUnit_DomainService", 
+          "description" : "The amount."
+        }, 
+        "comment" : {
+          "$ref" : "#/definitions/AttendanceComment_DomainService", 
+          "description" : "Comment."
+        }, 
+        "dayBased" : {
+          "description" : "A Boolean indicator of whether or not the amount of an event should be measured in days.", 
+          "type" : "boolean"
+        }, 
+        "displayName" : {
+          "description" : "Display name.", 
+          "type" : "string"
+        }, 
+        "exceptionType" : {
+          "$ref" : "#/definitions/ExceptionType_DomainService", 
+          "description" : "Exception type."
+        }, 
+        "extendedData" : {
+          "description" : "Shows whether this scheduled or worked pay code event has shift or daily.", 
+          "type" : "string"
+        }, 
+        "group" : {
+          "$ref" : "#/definitions/EventGroup_DomainService", 
+          "description" : "Event group."
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "lowerThresholdAmount" : {
+          "description" : "Low threshold amount in hours for which events are triggered.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "lowerThresholdDayAmount" : {
+          "description" : "Low threshold amount in days for which events are triggered.", 
+          "type" : "number"
+        }, 
+        "paycode" : {
+          "$ref" : "#/definitions/Paycode_DomainService", 
+          "description" : "Paycode."
+        }, 
+        "paycodeAmountType" : {
+          "$ref" : "#/definitions/PaycodeAmountType_DomainService", 
+          "description" : "Paycode amount type."
+        }, 
+        "punchType" : {
+          "$ref" : "#/definitions/PunchType_DomainService", 
+          "description" : "Punch type (in, out or any)."
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }, 
+        "shortName" : {
+          "description" : "Short name.", 
+          "type" : "string"
+        }, 
+        "type" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject_DomainService", 
+          "description" : "Type."
+        }, 
+        "upperThresholdAmount" : {
+          "description" : "Upper threshold amount in hours for which events are triggered.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "upperThresholdDayAmount" : {
+          "description" : "Upper threshold amount in days for which events are triggered.", 
+          "type" : "number"
+        }, 
+        "usedType" : {
+          "$ref" : "#/definitions/EventUsedType_DomainService", 
+          "description" : "Event used type."
+        }
+      }, 
+      "required" : [ "active", "amountUnit", "comment", "dayBased", "displayName", "exceptionType", "extendedData", "group", "lowerThresholdAmount", "lowerThresholdDayAmount", "paycode", "paycodeAmountType", "punchType", "qualifier", "shortName", "type", "upperThresholdAmount", "upperThresholdDayAmount", "usedType" ], 
+      "type" : "object"
+    }, 
+    "PointTransaction_DomainService" : {
+      "description" : "Model for Point Transaction.", 
+      "properties" : {
+        "applyDateTime" : {
+          "description" : "Apply date and time of point transaction.", 
+          "type" : "string"
+        }, 
+        "balanceChange" : {
+          "description" : "Balance change amount.", 
+          "format" : "double", 
+          "type" : "number"
+        }, 
+        "decimalPlaceNum" : {
+          "description" : "Number of decimal places.", 
+          "type" : "number"
+        }, 
+        "employee" : {
+          "$ref" : "#/definitions/AttendanceObjectReferenceDto_DomainService", 
+          "description" : "A reference to the Employee object."
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "name" : {
+          "description" : "The name associated with an object reference.", 
+          "type" : "string"
+        }, 
+        "type" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject_DomainService", 
+          "description" : "A localized reference to the type object."
+        }
+      }, 
+      "required" : [ "applyDateTime", "balanceChange", "employee", "name", "type" ], 
+      "type" : "object"
+    }, 
+    "EventDefinition" : {
+      "description" : "Model for Event Definition.", 
+      "properties" : {
+        "active" : {
+          "description" : "A Boolean indicator of whether or not an event definition is active.", 
+          "type" : "boolean"
+        }, 
+        "amountUnit" : {
+          "$ref" : "#/definitions/AmountUnit", 
+          "description" : "The amount."
+        }, 
+        "comment" : {
+          "$ref" : "#/definitions/AttendanceComment", 
+          "description" : "Comment."
+        }, 
+        "dayBased" : {
+          "description" : "A Boolean indicator of whether or not the amount of an event should be measured in days.", 
+          "type" : "boolean"
+        }, 
+        "displayName" : {
+          "description" : "Display name.", 
+          "type" : "string"
+        }, 
+        "exceptionType" : {
+          "$ref" : "#/definitions/ExceptionType", 
+          "description" : "Exception type."
+        }, 
+        "extendedData" : {
+          "description" : "Shows whether this scheduled or worked pay code event has shift or daily.", 
+          "type" : "string"
+        }, 
+        "group" : {
+          "$ref" : "#/definitions/EventGroup", 
+          "description" : "Event group."
+        }, 
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "lowerThresholdAmount" : {
+          "description" : "Low threshold amount in hours for which events are triggered.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "lowerThresholdDayAmount" : {
+          "description" : "Low threshold amount in days for which events are triggered.", 
+          "type" : "number"
+        }, 
+        "paycode" : {
+          "$ref" : "#/definitions/Paycode", 
+          "description" : "Paycode."
+        }, 
+        "paycodeAmountType" : {
+          "$ref" : "#/definitions/PaycodeAmountType", 
+          "description" : "Paycode amount type."
+        }, 
+        "punchType" : {
+          "$ref" : "#/definitions/PunchType", 
+          "description" : "Punch type (in, out or any)."
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }, 
+        "shortName" : {
+          "description" : "Short name.", 
+          "type" : "string"
+        }, 
+        "type" : {
+          "$ref" : "#/definitions/AttendanceLocalizedObject", 
+          "description" : "Type."
+        }, 
+        "upperThresholdAmount" : {
+          "description" : "Upper threshold amount in hours for which events are triggered.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "upperThresholdDayAmount" : {
+          "description" : "Upper threshold amount in days for which events are triggered.", 
+          "type" : "number"
+        }, 
+        "usedType" : {
+          "$ref" : "#/definitions/EventUsedType", 
+          "description" : "Event used type."
+        }
+      }, 
+      "required" : [ "active", "amountUnit", "comment", "dayBased", "displayName", "exceptionType", "extendedData", "group", "lowerThresholdAmount", "lowerThresholdDayAmount", "paycode", "paycodeAmountType", "punchType", "qualifier", "shortName", "type", "upperThresholdAmount", "upperThresholdDayAmount", "usedType" ], 
+      "type" : "object"
+    }, 
+    "PerfectAttendanceDefinition" : {
+      "description" : "Model for Perfect Attendance Definition.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "SchedulingEventDetails" : {
+      "description" : "Detailed information about the schedule", 
+      "properties" : {
+        "endDateTime" : {
+          "description" : "The end date and time", 
+          "type" : "string"
+        }, 
+        "endTime" : {
+          "description" : "End time", 
+          "type" : "string"
+        }, 
+        "forever" : {
+          "description" : "If the end time of the schedule is not specified, the end time is forever.", 
+          "type" : "boolean"
+        }, 
+        "frequency" : {
+          "description" : "Frequency of the event.", 
+          "type" : "string"
+        }, 
+        "frequencyType" : {
+          "description" : "Type of frequency. Examples: monthly, weekly, daily.", 
+          "format" : "int32", 
+          "type" : "integer"
+        }, 
+        "interval" : {
+          "description" : "Time interval between event runs.", 
+          "format" : "int32", 
+          "type" : "integer"
+        }, 
+        "startDateTime" : {
+          "description" : "The start date and time", 
+          "type" : "string"
+        }, 
+        "startTime" : {
+          "description" : "Start time", 
+          "type" : "string"
+        }
+      }, 
+      "type" : "object"
+    }, 
+    "ProfilePolicyAssignmentDTO" : {
+      "description" : "The profile policy assignment model.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a profile policy assignment.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "orderNum" : {
+          "description" : "The order number of a profile policy assignment.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier of a profile policy assignment.", 
+          "type" : "string"
+        }
+      }, 
+      "type" : "object"
+    }, 
+    "Multi Read References which contains actual criterias" : {
+      "description" : "The multi_read references which contain the actual criteria for retrieving employee groups.", 
+      "properties" : {
+        "ids" : {
+          "description" : "An array of employee group IDs. Employee groups are retrieved for valid identifiers specified in this array.", 
+          "items" : {
+            "format" : "int64", 
+            "type" : "integer"
+          }, 
+          "type" : "array"
+        }, 
+        "persistentIds" : {
+          "description" : "An array of persistent IDs of Hyperfind queries.", 
+          "items" : {
+            "type" : "string"
+          }, 
+          "type" : "array"
+        }, 
+        "qualifiers" : {
+          "description" : "An array of employee group names. Employee groups are retrieved for valid names specified in this array.", 
+          "items" : {
+            "type" : "string"
+          }, 
+          "type" : "array"
+        }, 
+        "refs" : {
+          "description" : "An array of references to employee group objects. Employee groups are retrieved for valid IDs or names specified in this array of object references.", 
+          "items" : {
+            "$ref" : "#/definitions/ObjectRef Entity"
+          }, 
+          "type" : "array"
+        }
+      }, 
+      "type" : "object"
+    }, 
+    "AmountUnit_DomainService" : {
+      "description" : "Model for Amount Unit of Event Definition.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "AttendanceComment_DomainService" : {
+      "description" : "Model for Comment of Event Definition.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "text" : {
+          "description" : "text.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "text" ], 
+      "type" : "object"
+    }, 
+    "ExceptionType_DomainService" : {
+      "description" : "Model for Exception Type.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "EventGroup_DomainService" : {
+      "description" : "Model for Event Group.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "Paycode_DomainService" : {
+      "description" : "Model for Paycode.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "PaycodeAmountType_DomainService" : {
+      "description" : "Model for Paycode Amount Type.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "PunchType_DomainService" : {
+      "description" : "Model for Punch Type.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "EventUsedType_DomainService" : {
+      "description" : "Model for EventUsedType.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "AmountUnit" : {
+      "description" : "Model for Amount Unit of Event Definition.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "AttendanceComment" : {
+      "description" : "Model for Comment of Event Definition.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "text" : {
+          "description" : "text.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "text" ], 
+      "type" : "object"
+    }, 
+    "ExceptionType" : {
+      "description" : "Model for Exception Type.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "Paycode" : {
+      "description" : "Model for Paycode.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "PaycodeAmountType" : {
+      "description" : "Model for Paycode Amount Type.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "PunchType" : {
+      "description" : "Model for Punch Type.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "EventUsedType" : {
+      "description" : "Model for EventUsedType.", 
+      "properties" : {
+        "id" : {
+          "description" : "The ID of a leave domain entity.", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "The qualifier which resolves an object reference.", 
+          "type" : "string"
+        }
+      }, 
+      "required" : [ "qualifier" ], 
+      "type" : "object"
+    }, 
+    "ObjectRef Entity" : {
+      "description" : "ObjectRef contains an id and qualifier and either field should be able to uniquely identify an Object", 
+      "properties" : {
+        "id" : {
+          "description" : "Object Ref Id", 
+          "format" : "int64", 
+          "type" : "integer"
+        }, 
+        "qualifier" : {
+          "description" : "Object Ref Unique qualifier", 
+          "type" : "string"
+        }
+      }, 
+      "type" : "object"
+    }
+  }
+}
